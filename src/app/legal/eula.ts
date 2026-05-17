@@ -101,6 +101,7 @@ import { Component } from '@angular/core';
             Dörflistrasse 6b<br>
             5706 Boniswil<br>
             Switzerland<br>
+            UID: CHE-332.403.467<br>
             <a href="https://venta.gg">venta.gg</a>
           </address>
 

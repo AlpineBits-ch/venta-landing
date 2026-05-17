@@ -36,6 +36,7 @@ import { RouterLink } from '@angular/router';
             Dörflistrasse 6b<br>
             5706 Boniswil<br>
             Switzerland<br>
+            UID: CHE-332.403.467<br>
             <a href="mailto:legal@venta.gg">legal&#64;venta.gg</a>
           </address>
           <p>This policy is governed by Swiss law, including the Federal Act on Data Protection (nFADP), and is designed to also meet the requirements of the EU General Data Protection Regulation (GDPR) where applicable.</p>
@@ -117,6 +118,7 @@ import { RouterLink } from '@angular/router';
             Dörflistrasse 6b<br>
             5706 Boniswil<br>
             Switzerland<br>
+            UID: CHE-332.403.467<br>
             <a href="mailto:legal@venta.gg">legal&#64;venta.gg</a>
           </address>
         </div>

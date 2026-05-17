@@ -70,6 +70,7 @@ import { RouterLink } from '@angular/router';
             Dörflistrasse 6b<br>
             5706 Boniswil<br>
             Switzerland<br>
+            UID: CHE-332.403.467<br>
             <a href="mailto:legal@venta.gg">legal&#64;venta.gg</a>
           </address>
         </div>
