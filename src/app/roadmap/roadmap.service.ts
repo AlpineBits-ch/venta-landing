@@ -75,10 +75,17 @@ export class RoadmapService {
       category: 'Platform',
     },
     {
+      id: 'self-hosting',
+      title: 'Self-hosting',
+      description: 'Run venta on your own infrastructure for maximum control and privacy.',
+      status: 'planned',
+      category: 'Platform',
+    },
+    {
       id: 'federation',
       title: 'Federation',
       description: 'Seamless integration with other self hosted server instances.',
-      status: 'considering',
+      status: 'planned',
       category: 'Platform',
     },
   ];
