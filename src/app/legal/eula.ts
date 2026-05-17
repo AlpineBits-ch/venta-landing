@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
           <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">End User License Agreement</h1>
           <p class="text-slate-500 text-sm mb-8">Last updated: May 17, 2025</p>
 
-          <p>Venta is licensed to You (End-User) by AlpineBits KLG, located at Dörflistrasse 6b, 5706 Boniswil, Switzerland ("Licensor"), for use only under the terms of this License Agreement.</p>
+          <p>Venta is licensed to You (End-User) by AlpineBits KLG (UID: CHE-332.403.467), located at Dörflistrasse 6b, 5706 Boniswil, Switzerland ("Licensor"), for use only under the terms of this License Agreement.</p>
           <p>By downloading the Licensed Application from <a href="https://venta.gg">venta.gg</a>, and any update thereto (as permitted by this License Agreement), You indicate that You agree to be bound by all of the terms and conditions of this License Agreement, and that You accept this License Agreement. The platform from which you download Venta is referred to in this License Agreement as "Services."</p>
           <p>The parties of this License Agreement acknowledge that the Services are not a Party to this License Agreement and are not bound by any provisions or obligations with regard to the Licensed Application, such as warranty, liability, maintenance and support thereof. AlpineBits KLG, not the Services, is solely responsible for the Licensed Application and the content thereof.</p>
           <p>This License Agreement may not provide for usage rules for the Licensed Application that are in conflict with the latest applicable Usage Rules. AlpineBits KLG acknowledges that it had the opportunity to review the Usage Rules and this License Agreement is not conflicting with them.</p>
