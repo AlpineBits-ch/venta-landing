@@ -37,7 +37,7 @@ import { Component } from '@angular/core';
           </ol>
 
           <h2 id="s1">1. The Application</h2>
-          <p>Venta ("Licensed Application") is a piece of software created to provide a secure messaging and communication platform — and customized for use across desktop and mobile devices ("Devices"). It is used to enable private, end-to-end encrypted communication between users.</p>
+          <p>Venta ("Licensed Application") is a piece of software created to provide a secure messaging and communication platform, customized for use across desktop and mobile devices ("Devices"). It is used to enable private, end-to-end encrypted communication between users.</p>
 
           <h2 id="s2">2. Scope of License</h2>
           <p>This license governs your use of Venta as downloaded or accessed through the Services. The Licensor reserves all rights not expressly granted to You under this Agreement. You may not sublicense, sell, rent, lease, transfer, assign, or otherwise dispose of the Licensed Application.</p>
@@ -109,7 +109,7 @@ import { Component } from '@angular/core';
 
           <h2 id="s13">13. Third-Party Terms of Agreements and Beneficiary</h2>
           <p>AlpineBits KLG represents and warrants that it will comply with applicable third-party terms of agreement when using the Licensed Application.</p>
-          <p>In accordance with Section 9 of the "Instructions for Minimum Terms of Developer's End-User License Agreement," subsidiaries shall be third-party beneficiaries of this End User License Agreement and — upon Your acceptance of the terms and conditions of this License Agreement — will have the right (and will be deemed to have accepted the right) to enforce this End User License Agreement against You as a third-party beneficiary thereof.</p>
+          <p>In accordance with Section 9 of the "Instructions for Minimum Terms of Developer's End-User License Agreement," subsidiaries shall be third-party beneficiaries of this End User License Agreement and, upon Your acceptance of the terms and conditions of this License Agreement, will have the right (and will be deemed to have accepted the right) to enforce this End User License Agreement against You as a third-party beneficiary thereof.</p>
 
           <h2 id="s14">14. Intellectual Property Rights</h2>
           <p>AlpineBits KLG and the End-User acknowledge that, in the event of any third-party claim that the Licensed Application or the End-User's possession and use of that Licensed Application infringes on the third party's intellectual property rights, AlpineBits KLG, and not the Services, will be solely responsible for the investigation, defense, settlement, and discharge of any such intellectual property infringement claims.</p>
