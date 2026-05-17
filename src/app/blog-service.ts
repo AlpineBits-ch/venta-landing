@@ -22,11 +22,12 @@ It all started with a game and not a social app.<br> We're building an MMO, wher
 And if we're lucky, we can cross fund our game development with that platform. Paying creative people who do the assets and sounds costs money, after all.
 
 ## Where are we now?
-Several days ago I started to get the word out about our project, initially on r/discordAlternatives and also on a RPG Subreddit.
-I found out that day, that there is a new discord clone popping up every day, so that kind of lowered my expectations a bit again. After all, why would people not believe that this is the next AI Slopware made in the basement of a 14 year old?
-After a bit of hesitation I published the post and it somehow got quite a bit of traction compared to the other posts in the subreddit, which was great!
-So we discussed internally on how to proceed. I'd like to get the app out the door as early as possible, but also with clear expectations. This is an initial release, and publishing it is a big risk for us, because the app is not polished and lacks a whole lot of features I'd like to have in.
-However, I think opening up early means more feedback about it and more actionable items we can work on instead of building this in the background and then dropping it in a year. So this brings me to the actual release announcement.
+Several days ago I started to get the word out about our project, initially on r/discordAlternatives and also on a RPG Subreddit.<br>
+I found out that day, that there is a new discord clone popping up every day, so that kind of lowered my expectations a bit again. After all, why would people not believe that this is the next AI Slopware made in the basement of a 14 year old?<br>
+After a bit of hesitation I published the post and it somehow got quite a bit of traction compared to the other posts in the subreddit, which was great!<br>
+So we discussed internally on how to proceed. I'd like to get the app out the door as early as possible, but also with clear expectations.<br>
+This is an initial release, and publishing it is a big risk for us, because the app is not polished and lacks a whole lot of features I'd like to have in.
+However, I think opening up early means more feedback about it and more actionable items we can work on instead of building this in the background and then dropping it in a year.<br>So this brings me to the actual release announcement.
 
 ## Release notes for the initial version.
 
