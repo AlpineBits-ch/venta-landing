@@ -19,19 +19,17 @@
       Venta.gg is a new but powerful platform for instant messaging and WebRTC. Built for communities, groups, and friends.
     </p>
 
-    <div class="relative inline-flex items-stretch rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" id="download-split-button">
+
+    <div class="relative inline-flex items-stretch rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 bg-white" id="download-split-button">
 
       <!-- Left: Main Download Button -->
       <a href="https://api.alpinebits.ch/api/v1/update/download/latest/windows-x86_64-msi"
-         class="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-3 rounded-l-xl font-semibold text-sm flex items-center gap-2 hover:from-blue-700 hover:to-blue-600 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-        </svg>
+         class="text-blue-600 font-bold px-8 py-4 rounded-l-xl text-sm flex items-center gap-2 hover:bg-blue-50 transition-all duration-200">
         Download for Windows
       </a>
 
       <!-- Divider -->
-      <div class="w-px bg-blue-400 self-stretch"></div>
+      <div class="w-px bg-blue-100 self-stretch my-2"></div>
 
       <!-- Right: Dropdown Toggle -->
       <div class="relative" (click)="$event.stopPropagation()">
@@ -39,7 +37,7 @@
                 (click)="toggleDropdown($event)"
                 [attr.aria-haspopup]="true"
                 [attr.aria-expanded]="isOpen"
-                class="bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:from-blue-700 hover:to-blue-600 px-3 py-3 rounded-r-xl transition-all duration-200 flex items-center justify-center transform hover:-translate-y-0.5 active:translate-y-0 h-full">
+                class="text-blue-600 hover:bg-blue-50 px-4 rounded-r-xl transition-all duration-200 flex items-center justify-center h-full">
           <svg class="w-5 h-5 transition-transform duration-200"
                [class.rotate-180]="isOpen"
                fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,7 +85,6 @@
         </div>
       </div>
     </div>
-
     <!-- What works today Section -->
     <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight drop-shadow-md mt-12">
       What works today
