@@ -10,7 +10,7 @@ export class BlogService {
       date: 'May 17, 2025',
       author: 'Dominic',
       category: 'About',
-      summary: 'We\'re a small team of gamers who got tired of platforms that monetize your data. Here\'s our story.',
+      summary: 'How we went from building a game to building a discord alternative.',
       content: `
 
 
