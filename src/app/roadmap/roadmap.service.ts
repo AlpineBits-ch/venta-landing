@@ -43,7 +43,7 @@ export class RoadmapService {
       id: 'screen-share',
       title: 'Screen sharing',
       description: 'Share your screen during voice and video calls.',
-      status: 'planned',
+      status: 'done',
       category: 'Core',
     },
     {
