@@ -75,6 +75,13 @@ export class RoadmapService {
       category: 'Platform',
     },
     {
+      id: 'webhooks',
+      title: 'Webhook support for guilds',
+      description: 'Authenticated and unauthenticated webhook support for guilds.',
+      status: 'in-progress',
+      category: 'Platform',
+    },
+    {
       id: 'self-hosting',
       title: 'Self-hosting',
       description: 'Run venta on your own infrastructure for maximum control and privacy.',
