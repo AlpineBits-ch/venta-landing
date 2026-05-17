@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
-
+@plugin "@tailwindcss/typography";
 /* Add to src/styles.css */
 .blog-prose h2 {
   font-size: 1.35rem;
@@ -111,4 +111,14 @@
   font-style: normal;
   line-height: 1.8;
   margin-bottom: 1rem;
+}
+.blog-prose ul {
+  list-style-type: disc !important;
+}
+.blog-prose ol {
+  list-style-type: decimal !important;
+}
+
+.blog-prose :is(li) {
+  margin-bottom: 0.35rem;
 }

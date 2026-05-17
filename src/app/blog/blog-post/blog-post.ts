@@ -136,6 +136,23 @@ import {BlogService} from '../../blog-service';
       border-top: 1px solid #e2e8f0;
       margin: 2rem 0;
     }
+    .blog-prose :is(ul, ol) {
+      color: #475569;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .blog-prose ul {
+      list-style-type: disc !important;
+    }
+    .blog-prose ol {
+      list-style-type: decimal !important;
+    }
+
+    .blog-prose :is(li) {
+      margin-bottom: 0.35rem;
+    }
   `]
 })
 export class BlogPostComponent implements OnInit {
@@ -149,7 +166,7 @@ export class BlogPostComponent implements OnInit {
     this.post = this.blogService.getBySlug(slug!);
     if (this.post) {
       this.renderedContent = await marked(this.post.content);
-      this.cdr.detectChanges(); // 👈 and this
+      this.cdr.detectChanges();
     }
   }
 }
