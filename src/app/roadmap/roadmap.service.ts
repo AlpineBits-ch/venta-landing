@@ -95,6 +95,13 @@ export class RoadmapService {
       status: 'planned',
       category: 'Platform',
     },
+    {
+      id: 'web-platform',
+      title: 'Web Client',
+      description: 'Enable a self contained web client where no install is required.',
+      status: 'planned',
+      category: 'Platform',
+    },
   ];
 
   getAll(): RoadmapItem[] {
