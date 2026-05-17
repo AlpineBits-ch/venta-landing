@@ -6,6 +6,7 @@ import {RoadmapComponent} from './roadmap/roadmap';
 import {PrivacyComponent} from './legal/privacy';
 import {EulaComponent} from './legal/eula';
 import {CookiePolicyComponent} from './legal/cookie-policy';
+import {ImpressumComponent} from './legal/impressum';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,4 +17,5 @@ export const routes: Routes = [
   { path: 'privacy', component: PrivacyComponent },
   { path: 'eula', component: EulaComponent },
   { path: 'cookie-policy', component: CookiePolicyComponent },
+  { path: 'impressum', component: ImpressumComponent },
 ];

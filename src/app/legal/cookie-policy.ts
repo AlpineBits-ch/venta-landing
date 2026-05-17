@@ -67,6 +67,7 @@ import { RouterLink } from '@angular/router';
           <p>If you have questions about how we use cookies, please contact:</p>
           <address>
             AlpineBits KLG<br>
+            c/o Dominic Järmann<br>
             Dörflistrasse 6b<br>
             5706 Boniswil<br>
             Switzerland<br>

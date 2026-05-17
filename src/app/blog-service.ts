@@ -8,7 +8,7 @@ export class BlogService {
       slug: 'who-we-are',
       title: 'Who we are and why we built Venta.GG',
       date: 'May 17, 2025',
-      author: 'The Venta Team',
+      author: 'Dominic',
       category: 'About',
       summary: 'We\'re a small team of gamers who got tired of platforms that monetize your data. Here\'s our story.',
       content: `
@@ -24,36 +24,6 @@ On Feb 9, 2026, Discord announced their policy changes. We moved our internal co
 
 Privacy isn't a feature, it's the point. We've added an initial MLS (E2EE) implementation for DMs - the server can't read your messages. We're still refining it, but that's the direction everything is heading.
 `
-    },
-    {
-      slug: 'beta-launch',
-      title: 'We\'re live in public beta',
-      date: 'May 17, 2025',
-      author: 'The Venta Team',
-      category: 'Announcement',
-      summary: 'Today we\'re opening Venta.GG to the public. Here\'s what works, what\'s broken, and what\'s coming next.',
-      content: `
-## What's working today
-
-Today we're opening Venta.GG to anyone who wants to try it. This is a public beta — things will break, and that's okay.
-
-Here's what's solid right now:
-
-- **Instant messaging** — fast, reliable, end-to-end encrypted
-- **WebRTC calls** — video and audio with up to 4 participants
-- **Guilds** — community spaces with channels, categories, and a permission system
-- **Friend relationships** — add friends, start private conversations and calls
-
-## Known rough edges
-
-- Linux support is experimental — may not work on your distro yet
-- Mobile web is usable but not polished
-- Some guild permission edge cases are still being ironed out
-
-## How to help
-
-Join our Discord, report bugs, tell us what's confusing, and tell us what you wish existed. Every piece of feedback goes directly to the people building this.
-      `
     }
   ];
 

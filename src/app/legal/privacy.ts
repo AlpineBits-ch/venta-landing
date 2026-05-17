@@ -33,6 +33,7 @@ import { RouterLink } from '@angular/router';
           <p>The data controller responsible for your personal data is:</p>
           <address>
             AlpineBits KLG<br>
+            c/o Dominic Järmann<br>
             Dörflistrasse 6b<br>
             5706 Boniswil<br>
             Switzerland<br>
@@ -115,6 +116,7 @@ import { RouterLink } from '@angular/router';
           <p>If you have any questions about this Privacy Policy or how we handle your data, please contact:</p>
           <address>
             AlpineBits KLG<br>
+            c/o Dominic Järmann<br>
             Dörflistrasse 6b<br>
             5706 Boniswil<br>
             Switzerland<br>

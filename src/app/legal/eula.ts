@@ -98,6 +98,7 @@ import { Component } from '@angular/core';
           <p>For general inquiries, complaints, questions or claims concerning the Licensed Application, please contact:</p>
           <address>
             AlpineBits KLG<br>
+            c/o Dominic Järmann<br>
             Dörflistrasse 6b<br>
             5706 Boniswil<br>
             Switzerland<br>
