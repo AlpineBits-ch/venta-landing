@@ -1,21 +1,40 @@
-<header class="fixed top-6 left-1/2 -translate-x-1/2 w-[90vw] max-w-6xl h-16 bg-white/80 backdrop-blur-md rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between px-6 z-50">
-  <!-- Logo Section -->
-  <div class="flex items-center gap-2">
-    <img src="/logo.png" alt="logo" class="h-8 w-auto object-contain">
-    <span class="font-semibold text-slate-900 tracking-tight text-lg">Brand</span>
+<header class="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 w-[92vw] max-w-6xl h-16 bg-white/90 backdrop-blur-md rounded-2xl shadow-md border border-slate-100 flex items-center justify-between px-4 sm:px-6 z-50">
+
+  <div class="flex items-center flex-shrink-0">
+    <span class="font-extrabold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-slate-900 to-indigo-950 bg-clip-text text-transparent select-none">
+      Venta<span class="text-indigo-600 font-bold">.GG</span>
+    </span>
   </div>
 
-  <!-- Navigation Links -->
-  <nav class="flex items-center gap-6">
+  <nav class="hidden sm:flex items-center gap-6">
     <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Download</a>
     <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Documentation</a>
     <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Contact</a>
   </nav>
 
-  <!-- Call to Action (Support Us) -->
-  <div class="flex items-center">
-    <a href="https://donate.stripe.com/cNi00k5F7eNdgXwcxjeZ200" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 rounded-xl transition-all shadow-sm hover:shadow active:scale-95">
+  <div class="flex items-center gap-2 sm:gap-0">
+    <a href="https://donate.stripe.com/cNi00k5F7eNdgXwcxjeZ200"
+       class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-medium px-3 sm:px-4 py-2 rounded-xl transition-all shadow-sm hover:shadow active:scale-95 whitespace-nowrap">
       Support Us
     </a>
+
+    <button type="button"
+            (click)="isMenuOpen = !isMenuOpen"
+            class="sm:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-xl transition-colors focus:outline-none"
+            aria-label="Toggle Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path [attr.d]="isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        </path>
+      </svg>
+    </button>
   </div>
+
+  <div [class.hidden]="!isMenuOpen"
+       class="absolute top-[calc(100%+8px)] left-0 w-full bg-white/95 backdrop-blur-md rounded-2xl border border-slate-100 shadow-xl p-4 flex flex-col gap-3 sm:hidden transform origin-top transition-all z-50">
+    <a href="#" (click)="isMenuOpen = false" class="text-base font-semibold text-slate-700 hover:text-indigo-600 hover:bg-slate-50 px-4 py-2.5 rounded-xl transition-colors">Download</a>
+    <a href="#" (click)="isMenuOpen = false" class="text-base font-semibold text-slate-700 hover:text-indigo-600 hover:bg-slate-50 px-4 py-2.5 rounded-xl transition-colors">Documentation</a>
+    <a href="#" (click)="isMenuOpen = false" class="text-base font-semibold text-slate-700 hover:text-indigo-600 hover:bg-slate-50 px-4 py-2.5 rounded-xl transition-colors">Contact</a>
+  </div>
+
 </header>

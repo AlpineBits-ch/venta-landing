@@ -1,43 +1,38 @@
-<div class="min-h-screen bg-linear-to-br from-[#1e293b] via-[#3b82f6] to-[#1d4ed8] relative overflow-y-auto flex flex-col justify-between">
+<div class="min-h-screen bg-linear-to-br from-[#1e293b] via-[#3b82f6] to-[#1d4ed8] relative overflow-y-auto overflow-x-hidden flex flex-col justify-between w-full max-w-full">
 
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none"></div>
 
   <app-header class="z-50"></app-header>
 
+  <div class="flex-1 flex flex-col justify-center items-center px-4 sm:px-10 z-10 max-w-4xl mx-auto text-center gap-6 pt-32 pb-12 w-full box-border">
 
-  <div class="flex-1 flex flex-col justify-center items-center px-6 sm:px-10 z-10 max-w-4xl mx-auto text-center gap-6 pt-32 pb-12">
-
-    <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight drop-shadow-md">
+    <h1 class="text-3xl sm:text-6xl font-extrabold text-white tracking-tight drop-shadow-md break-words w-full">
       A messenger application that <span class="text-blue-200">doesn't sell your data.</span>
     </h1>
 
-    <h3 class="text-xl sm:text-2xl font-medium text-blue-100 opacity-90">
+    <h3 class="text-lg sm:text-2xl font-medium text-blue-100 opacity-90 w-full">
       Built by gamers for gamers.
     </h3>
 
-    <p class="text-lg text-slate-200 max-w-2xl leading-relaxed">
+    <p class="text-base sm:text-lg text-slate-200 max-w-2xl leading-relaxed w-full">
       Venta.gg is a new but powerful platform for instant messaging and WebRTC. Built for communities, groups, and friends.
     </p>
 
+    <div class="relative inline-flex items-stretch rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 bg-white max-w-full" id="download-split-button">
 
-    <div class="relative inline-flex items-stretch rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 bg-white" id="download-split-button">
-
-      <!-- Left: Main Download Button -->
       <a href="https://api.alpinebits.ch/api/v1/update/download/latest/windows-x86_64-msi"
-         class="text-blue-600 font-bold px-8 py-4 rounded-l-xl text-sm flex items-center gap-2 hover:bg-blue-50 transition-all duration-200">
+         class="text-blue-600 font-bold px-6 sm:px-8 py-4 rounded-l-xl text-xs sm:text-sm flex items-center gap-2 hover:bg-blue-50 transition-all duration-200 whitespace-nowrap">
         Download for Windows
       </a>
 
-      <!-- Divider -->
       <div class="w-px bg-blue-100 self-stretch my-2"></div>
 
-      <!-- Right: Dropdown Toggle -->
       <div class="relative" (click)="$event.stopPropagation()">
         <button type="button"
                 (click)="toggleDropdown($event)"
                 [attr.aria-haspopup]="true"
                 [attr.aria-expanded]="isOpen"
-                class="text-blue-600 hover:bg-blue-50 px-4 rounded-r-xl transition-all duration-200 flex items-center justify-center h-full">
+                class="text-blue-600 hover:bg-blue-50 px-3 sm:px-4 rounded-r-xl transition-all duration-200 flex items-center justify-center h-full">
           <svg class="w-5 h-5 transition-transform duration-200"
                [class.rotate-180]="isOpen"
                fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,15 +40,13 @@
           </svg>
         </button>
 
-        <!-- Dropdown Menu -->
         <div [class.hidden]="!isOpen"
              [class.scale-95]="!isOpen"
              [class.opacity-0]="!isOpen"
              [class.scale-100]="isOpen"
              [class.opacity-100]="isOpen"
-             class="absolute right-0 top-full mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50 transform origin-top transition-all duration-150">
+             class="absolute right-0 top-full mt-2 w-64 sm:w-72 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50 transform origin-top transition-all duration-150">
 
-          <!-- Windows Option -->
           <a href="https://api.alpinebits.ch/api/v1/update/download/latest/windows-x86_64-msi"
              class="w-full text-left px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 flex items-center justify-between transition-colors">
             <span>Windows (.msi)</span>
@@ -62,7 +55,6 @@
 
           <hr class="border-gray-100 my-1">
 
-          <!-- Linux DEB Option -->
           <a href="https://api.alpinebits.ch/api/v1/update/download/latest/linux-x86_64"
              class="w-full text-left px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 flex flex-col transition-colors">
             <div class="flex items-center justify-between w-full">
@@ -72,7 +64,6 @@
             <span class="text-[11px] text-gray-400 font-normal mt-0.5">May not work on your distribution yet.</span>
           </a>
 
-          <!-- Linux RPM Option -->
           <a href="https://api.alpinebits.ch/api/v1/update/download/latest/linux-x86_64-rpm"
              class="w-full text-left px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 flex flex-col transition-colors">
             <div class="flex items-center justify-between w-full">
@@ -85,7 +76,7 @@
         </div>
       </div>
     </div>
-    <!-- What works today Section -->
+
     <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight drop-shadow-md mt-12">
       What works today
     </h1>
@@ -119,36 +110,33 @@
 
     </div>
 
-    <!-- NEW: Screenshots Section -->
     <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight drop-shadow-md mt-16">
       See it in action
     </h1>
 
-    <div class="flex overflow-x-auto pb-4 gap-6 w-full snap-x snap-mandatory sm:grid sm:grid-cols-2 sm:overflow-x-visible sm:pb-0 scrollbar-hide">
+    <div class="flex overflow-x-auto pb-4 gap-6 w-full snap-x snap-mandatory scroll-pl-4 px-4 sm:grid sm:grid-cols-2 sm:overflow-x-visible sm:pb-0 sm:px-0 scrollbar-hide">
 
-      <!-- Screenshot 1 -->
-      <div class="flex-none w-5/6 sm:w-full snap-center bg-white/10 p-2 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-sm transition-transform duration-300 hover:scale-[1.02]">
+      <div class="flex-none w-5/6 sm:w-full snap-start bg-white/10 p-2 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-sm transition-transform duration-300 hover:scale-[1.02]">
         <img src="path-to-your-screenshot-1.png" alt="Venta App Chat Interface" class="rounded-xl w-full h-auto object-cover" loading="lazy">
         <p class="text-sm font-medium text-blue-100 mt-3 mb-1 text-center">Clean & Intuitive Chat Interface</p>
       </div>
 
-      <!-- Screenshot 2 -->
-      <div class="flex-none w-5/6 sm:w-full snap-center bg-white/10 p-2 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-sm transition-transform duration-300 hover:scale-[1.02]">
+      <div class="flex-none w-5/6 sm:w-full snap-start bg-white/10 p-2 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-sm transition-transform duration-300 hover:scale-[1.02]">
         <img src="/img.png" alt="Venta App Guilds and Channels" class="rounded-xl w-full h-auto object-cover" loading="lazy">
         <p class="text-sm font-medium text-blue-100 mt-3 mb-1 text-center">Manage Powerful Guild Communities</p>
       </div>
 
-      <!-- Screenshot 3 -->
-      <div class="flex-none w-5/6 sm:w-full snap-center bg-white/10 p-2 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-sm transition-transform duration-300 hover:scale-[1.02]">
+      <div class="flex-none w-5/6 sm:w-full snap-start bg-white/10 p-2 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-sm transition-transform duration-300 hover:scale-[1.02]">
         <img src="path-to-your-screenshot-3.png" alt="Venta App WebRTC Video Calls" class="rounded-xl w-full h-auto object-cover" loading="lazy">
         <p class="text-sm font-medium text-blue-100 mt-3 mb-1 text-center">Crystal Clear WebRTC Calls</p>
       </div>
 
-      <!-- Screenshot 4 -->
-      <div class="flex-none w-5/6 sm:w-full snap-center bg-white/10 p-2 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-sm transition-transform duration-300 hover:scale-[1.02]">
+      <div class="flex-none w-5/6 sm:w-full snap-start bg-white/10 p-2 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-sm transition-transform duration-300 hover:scale-[1.02]">
         <img src="path-to-your-screenshot-4.png" alt="Venta App Privacy Settings" class="rounded-xl w-full h-auto object-cover" loading="lazy">
         <p class="text-sm font-medium text-blue-100 mt-3 mb-1 text-center">Secure End-to-End Encryption</p>
       </div>
+
+      <div class="flex-none w-1 sm:hidden"></div>
 
     </div>
 
