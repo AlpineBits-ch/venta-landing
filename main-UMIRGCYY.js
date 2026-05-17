@@ -6,8 +6,9 @@ ${n.map((r,o)=>`${o+1}) ${r.toString()}`).join(`
 
 ## Origins of Venta.GG
 
-It started not with a social app, but with a game. We're building an MMO, where in game socials and voice comms play a cruical role and therefore
- we needed a voice and social platform to go with it.<br> For us, trying to build that platform first sounded like a good idea, since we can figure out an architecture and a core server stack and then build our game networking around that.
+It all started with a game and not a social app.<br> We're building an MMO, where in game socials and voice comms play a cruical role and therefore
+ we needed a voice and social platform to go with it.<br>
+ For us, trying to build that platform first sounded like a good idea, since we can figure out an architecture and a core server stack and then build our game networking around that. <br>
 And if we're lucky, we can cross fund our game development with that platform. Paying creative people who do the assets and sounds costs money, after all.
 
 ## Where are we now?
