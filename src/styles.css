@@ -72,3 +72,43 @@
   border-top: 1px solid #e2e8f0;
   margin: 2rem 0;
 }
+
+.legal-prose h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #e2e8f0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.legal-prose p {
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.legal-prose ol {
+  color: #475569;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  list-style-type: decimal;
+}
+.legal-prose li {
+  margin-bottom: 0.35rem;
+}
+.legal-prose strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+.legal-prose a {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+.legal-prose address {
+  color: #475569;
+  font-style: normal;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
