@@ -1,13 +1,12 @@
-import {Component, HostListener, signal} from '@angular/core';
-import {Header} from './components/header/header';
-import {RouterOutlet} from '@angular/router';
+import { Component } from '@angular/core';
+import { Header } from './components/header/header';
+import { Footer } from './components/footer/footer';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, RouterOutlet],
+  imports: [Header, Footer, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-
-}
+export class App {}

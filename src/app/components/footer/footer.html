@@ -1,0 +1,29 @@
+<footer class="relative z-10 mt-auto border-t border-white/10 bg-black/20 backdrop-blur-sm px-4 py-6">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+
+    <!-- Branding -->
+    <div class="flex flex-col items-center sm:items-start gap-1">
+      <span class="font-extrabold text-base tracking-tight text-white select-none">
+        Venta<span class="text-indigo-400">.GG</span>
+      </span>
+      <span class="text-xs text-white/40">&copy; {{ year }} Venta.GG. All rights reserved.</span>
+    </div>
+
+    <!-- Links -->
+    <nav class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+      <a href="mailto:legal@venta.gg"
+         class="text-xs text-white/60 hover:text-white transition-colors whitespace-nowrap">
+        Impressum
+      </a>
+      <a routerLink="/privacy"
+         class="text-xs text-white/60 hover:text-white transition-colors whitespace-nowrap">
+        Privacy Policy
+      </a>
+      <a routerLink="/eula"
+         class="text-xs text-white/60 hover:text-white transition-colors whitespace-nowrap">
+        EULA
+      </a>
+    </nav>
+
+  </div>
+</footer>

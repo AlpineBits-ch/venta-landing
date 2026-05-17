@@ -14,18 +14,16 @@ export class BlogService {
       content: `
 ## Where it started
 
-We're a small team of gamers and developers who got tired of the same thing: every platform we used was selling our data, stuffing ads into our chats, or locking us into ecosystems we didn't want.
+It started not with a social app, but with a game - we're building something called *Fractured Echoes*. For that we needed a stable voice engine and messenger that could scale with it. We put an ungodly amount of time into getting WebRTC and text messaging to actually work the way we wanted.
 
-So we decided to build something different.
+## Why we opened it up
+
+On Feb 9, 2026, Discord announced their policy changes. We moved our internal comms to our own tool - "Alpine" back then, the very early prototype of what became Venta.GG. We kept adding features to get back to parity with what we had, and at some point it clicked: we could open this to other people, help fund the game, and stress-test the platform at the same time.
 
 ## What we believe
 
-Your conversations are yours. Full stop. We use MLS encryption on all private messages and calls so not even we can read them. We don't sell data, we don't run ads, and we don't plan to.
-
-## Where we're headed
-
-We're still in beta — rough edges exist and we know it. But we ship fast, we listen to feedback, and we're building this in the open with our community. If that sounds interesting, come hang out on Discord and help us shape what Venta.GG becomes.
-      `
+Privacy isn't a feature, it's the point. We've added an initial MLS (E2EE) implementation for DMs - the server can't read your messages. We're still refining it, but that's the direction everything is heading.
+`
     },
     {
       slug: 'beta-launch',
