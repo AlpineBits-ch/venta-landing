@@ -50,7 +50,7 @@ So.. where do I start. We have a whole lot of features but also a whole lot of f
  - Connecting to the WebRTC stream takes around 3-4 seconds. I will try to get that number down, but debugging WebRTC stuff in a non chrome env. is a bit cumbersome. It's on the to-do list for later.
  - You can't edit your profile.
  - You can't delete your user - message me on dominic@alpinebits.ch if you want it deleted. No hard feelings! :-)
- - The whole UI experience is a bit unpolished, things that should work sometimes don't and CTRL + R is your best friend sometimes.
+ - The whole UI experience is a bit unpolished, things that should work sometimes don't and CTRL + R is your best friend.
  - The Linux clients are a bit rusty. There is a non zero chance, that WebRTC doesn't work. I tried to fix it but didn't come around to test it. The whole window handling is weird on linux too, so windows is your best bet currently.
  - The web client is not ready either. We're working on it, but the priority is to get the native experience as good as possible before committing time to stub away some rust calls.
  - E2EE. I didn't find a better place to explain the drawbacks but tldr; You can't view those conversations from another device, you can't add the conversation TO another device, if you logout they are gone to you. We have some things ready to facilitate adding new devices and backup your private keys and MLS tree state, but that isn't wired up since I wanted to review it properly. You can, however, export the data as blob and then.. not import it. I'll put this on my list too. Best bet currently, is to not use E2EE - but that's up to you.
