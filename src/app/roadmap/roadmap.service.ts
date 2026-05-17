@@ -74,6 +74,13 @@ export class RoadmapService {
       status: 'in-progress',
       category: 'Platform',
     },
+    {
+      id: 'federation',
+      title: 'Federation',
+      description: 'Seamless integration with other self hosted server instances.',
+      status: 'considering',
+      category: 'Platform',
+    },
   ];
 
   getAll(): RoadmapItem[] {
