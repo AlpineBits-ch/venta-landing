@@ -1,12 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { marked } from 'marked';
 import { BlogPost } from '../blog.model';
-
-// Import the same posts array — in a real app you'd have a service for this
-const ALL_POSTS: BlogPost[] = [
-  // paste the same posts array from blog-list here
-];
+import {BlogService} from '../../blog-service';
 
 @Component({
   selector: 'app-blog-post',
@@ -40,9 +37,9 @@ const ALL_POSTS: BlogPost[] = [
             <span class="text-sm font-medium text-blue-100">{{ post.author }}</span>
           </div>
 
-          <!-- Post body -->
-          <div class="prose-custom bg-white/90 backdrop-blur-md rounded-2xl p-8 shadow-xl"
-               [innerHTML]="post.content">
+          <!-- Rendered markdown -->
+          <div class="blog-prose bg-white/90 backdrop-blur-md rounded-2xl p-8 shadow-xl"
+               [innerHTML]="renderedContent">
           </div>
 
           <!-- Footer CTA -->
@@ -70,26 +67,89 @@ const ALL_POSTS: BlogPost[] = [
     </div>
   `,
   styles: [`
-    .prose-custom :is(h2) {
-      font-size: 1.25rem;
+    .blog-prose :is(h2) {
+      font-size: 1.35rem;
       font-weight: 700;
       color: #1e293b;
-      margin: 1.75rem 0 0.75rem;
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #e2e8f0;
     }
-    .prose-custom :is(p) {
+    .blog-prose :is(h3) {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #334155;
+      margin: 1.5rem 0 0.5rem;
+    }
+    .blog-prose :is(p) {
       color: #475569;
-      line-height: 1.75;
+      line-height: 1.8;
       margin-bottom: 1rem;
+    }
+    .blog-prose :is(ul, ol) {
+      color: #475569;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .blog-prose :is(li) {
+      margin-bottom: 0.35rem;
+    }
+    .blog-prose :is(strong) {
+      color: #1e293b;
+      font-weight: 600;
+    }
+    .blog-prose :is(code) {
+      background: #f1f5f9;
+      color: #4f46e5;
+      font-size: 0.85em;
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    .blog-prose :is(pre) {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+    .blog-prose :is(pre code) {
+      background: none;
+      color: inherit;
+      padding: 0;
+    }
+    .blog-prose :is(blockquote) {
+      border-left: 3px solid #6366f1;
+      padding-left: 1rem;
+      color: #64748b;
+      font-style: italic;
+      margin: 1.25rem 0;
+    }
+    .blog-prose :is(a) {
+      color: #4f46e5;
+      text-decoration: underline;
+    }
+    .blog-prose :is(hr) {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 2rem 0;
     }
   `]
 })
 export class BlogPostComponent implements OnInit {
   post: BlogPost | undefined;
+  renderedContent = '';
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private blogService: BlogService,     private cdr: ChangeDetectorRef) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     const slug = this.route.snapshot.paramMap.get('slug');
-    this.post = ALL_POSTS.find(p => p.slug === slug);
+    this.post = this.blogService.getBySlug(slug!);
+    if (this.post) {
+      this.renderedContent = await marked(this.post.content);
+      this.cdr.detectChanges(); // 👈 and this
+    }
   }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BlogPost } from '../blog.model';
+import {BlogService} from '../../blog-service';
 
 @Component({
   selector: 'app-blog-list',
@@ -56,41 +57,8 @@ import { BlogPost } from '../blog.model';
   `
 })
 export class BlogListComponent {
-  posts: BlogPost[] = [
-    {
-      slug: 'who-we-are',
-      title: 'Who we are and why we built Venta.GG',
-      date: 'May 17, 2025',
-      author: 'The Venta Team',
-      category: 'About',
-      summary: 'We\'re a small team of gamers who got tired of platforms that monetize your data. Here\'s our story and what we\'re trying to build.',
-      content: `
-        <p>We're a small team of gamers and developers who got tired of the same thing: every platform we used was selling our data, stuffing ads into our chats, or locking us into ecosystems we didn't want.</p>
-        <p>So we decided to build something different.</p>
-        <h2>Where it started</h2>
-        <p>This project started as a weekend experiment — a simple chat app with no tracking, no ads, no nonsense. It grew from there. We added WebRTC calls, guilds, end-to-end encryption, and a permission system that actually makes sense.</p>
-        <h2>What we believe</h2>
-        <p>Your conversations are yours. Full stop. We use MLS encryption on all private messages and calls so not even we can read them. We don't sell data, we don't run ads, and we don't plan to.</p>
-        <h2>Where we're headed</h2>
-        <p>We're still in beta — rough edges exist and we know it. But we ship fast, we listen to feedback, and we're building this in the open with our community. If that sounds interesting, come hang out on Discord and help us shape what Venta.GG becomes.</p>
-      `
-    },
-    {
-      slug: 'beta-launch',
-      title: 'We\'re live in public beta',
-      date: 'May 17, 2025',
-      author: 'The Venta Team',
-      category: 'Announcement',
-      summary: 'Today we\'re opening Venta.GG to the public for the first time. Here\'s what works, what\'s broken, and what\'s coming next.',
-      content: `
-        <p>Today we're opening Venta.GG to anyone who wants to try it. This is a public beta — things will break, and that's okay.</p>
-        <h2>What's working today</h2>
-        <p>Instant messaging, WebRTC calls with up to 4 participants, guilds with channels and categories, friend relationships, and end-to-end encryption on all private conversations.</p>
-        <h2>Known rough edges</h2>
-        <p>Linux support is experimental. Mobile web is usable but not polished. Some guild permission edge cases are still being worked out.</p>
-        <h2>How to help</h2>
-        <p>Join our Discord, report bugs, tell us what's confusing, and tell us what you wish existed. Every piece of feedback goes directly to the people building this.</p>
-      `
-    }
-  ];
+  posts: BlogPost[];
+  constructor(private blogService: BlogService) {
+    this.posts = this.blogService.getAll();
+  }
 }
