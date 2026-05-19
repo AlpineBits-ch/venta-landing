@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
       <div class="max-w-3xl mx-auto">
         <div class="bg-white/90 backdrop-blur-md rounded-2xl p-8 sm:p-12 shadow-lg legal-prose">
           <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">End User License Agreement</h1>
-          <p class="text-slate-500 text-sm mb-8">Last updated: May 17, 2025</p>
+          <p class="text-slate-500 text-sm mb-8">Last updated: May 19, 2026</p>
 
           <p>Venta is licensed to You (End-User) by AlpineBits KLG (UID: CHE-332.403.467), located at Dörflistrasse 6b, 5706 Boniswil, Switzerland ("Licensor"), for use only under the terms of this License Agreement.</p>
           <p>By downloading the Licensed Application from <a href="https://venta.gg">venta.gg</a>, and any update thereto (as permitted by this License Agreement), You indicate that You agree to be bound by all of the terms and conditions of this License Agreement, and that You accept this License Agreement. The platform from which you download Venta is referred to in this License Agreement as "Services."</p>
@@ -27,7 +27,7 @@ import { Component } from '@angular/core';
             <li><a href="#s7">Liability</a></li>
             <li><a href="#s8">Warranty</a></li>
             <li><a href="#s9">Product Claims</a></li>
-            <li><a href="#s10">Legal Compliance</a></li>
+            <li><a href="#s10">Eligibility and Legal Compliance</a></li>
             <li><a href="#s11">Contact Information</a></li>
             <li><a href="#s12">Termination</a></li>
             <li><a href="#s13">Third-Party Terms of Agreements and Beneficiary</a></li>
@@ -91,8 +91,10 @@ import { Component } from '@angular/core';
           <p>(ii) any claim that the Licensed Application fails to conform to any applicable legal or regulatory requirement; and</p>
           <p>(iii) claims arising under consumer protection, privacy, or similar legislation.</p>
 
-          <h2 id="s10">10. Legal Compliance</h2>
-          <p>You represent and warrant that You are not located in a country that is subject to a US Government embargo, or that has been designated by the US Government as a "terrorist supporting" country; and that You are not listed on any US Government list of prohibited or restricted parties.</p>
+          <h2 id="s10">10. Eligibility and Legal Compliance</h2>
+          <p><strong>10.1 Age Thresholds:</strong> By executing this License Agreement and using the Licensed Application, you represent and warrant that you are at least 13 years of age. If you are a resident of the European Union or the European Economic Area (EEA), you represent and warrant that you are at least 16 years of age or have reached the minimum legal age required in your specific jurisdiction to consent to data processing under applicable local laws without parental verification.</p>
+          <p><strong>10.2 Global Sanctions:</strong> You represent and warrant that You are not located in a country that is subject to a US Government embargo, or that has been designated by the US Government as a "terrorist supporting" country; and that You are not listed on any US Government list of prohibited or restricted parties.</p>
+          <p><strong>10.3 Breach of Warranty:</strong> Any access or use of Venta by an individual who does not meet these criteria constitutes a material breach of this License Agreement, rendering your license immediately void.</p>
 
           <h2 id="s11">11. Contact Information</h2>
           <p>For general inquiries, complaints, questions or claims concerning the Licensed Application, please contact:</p>
