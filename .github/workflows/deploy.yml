@@ -26,8 +26,7 @@ jobs:
 
       - name: Build Angular App
         run: ./node_modules/.bin/ng build --configuration production
-      - name: Create 404 Error Page for SPA Routing
-        run: cp dist/alpine-angular-landing/browser/index.html dist/alpine-angular-landing/browser/404.html
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
