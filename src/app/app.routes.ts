@@ -7,6 +7,7 @@ import {PrivacyComponent} from './legal/privacy';
 import {EulaComponent} from './legal/eula';
 import {CookiePolicyComponent} from './legal/cookie-policy';
 import {ImpressumComponent} from './legal/impressum';
+import {InviteComponent} from './invite/invite.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,4 +19,5 @@ export const routes: Routes = [
   { path: 'eula', component: EulaComponent },
   { path: 'cookie-policy', component: CookiePolicyComponent },
   { path: 'impressum', component: ImpressumComponent },
+  { path: 'invite/:id', component: InviteComponent }
 ];
