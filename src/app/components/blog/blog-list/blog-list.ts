@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BlogPost } from '../blog.model';
-import {BlogService} from '../../blog-service';
+import {BlogService} from '../../../blog-service';
 
 @Component({
   selector: 'app-blog-list',
