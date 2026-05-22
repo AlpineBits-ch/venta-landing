@@ -16,7 +16,7 @@ export class BlogService {
 
 ## Origins of Venta.GG
 
-The beginning of what now became "Venta", started with the idea of creating a video game called <insert name here :D> about a fractured ring world drifting in space.<br>
+The beginning of what now became "Venta", started with the idea of creating a video game about a fractured ring world drifting in space.<br>
 While brainstorming and working on the concept of our game, we realized that we needed a voice and social platform to go with it.<br>
  For us, trying to build that platform first sounded like a good idea, since we can figure out an architecture and a core server stack and then build our game networking around that. <br>
 And if we're lucky, we can cross fund our game development with that platform. Paying creative people who do the assets and sounds costs money, after all.
