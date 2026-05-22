@@ -36,7 +36,7 @@ export class RoadmapService {
       id: 'mobile-polish',
       title: 'Mobile app polish',
       description: 'Improved responsive layouts and touch interactions across the app.',
-      status: 'in-progress',
+      status: 'planned',
       category: 'Mobile',
     },
     {
@@ -71,7 +71,7 @@ export class RoadmapService {
       id: 'bots-api',
       title: 'Bot & API platform',
       description: 'A public API for building integrations and automation bots.',
-      status: 'in-progress',
+      status: 'planned',
       category: 'Platform',
     },
     {
@@ -85,14 +85,14 @@ export class RoadmapService {
       id: 'self-hosting',
       title: 'Self-hosting',
       description: 'Run venta on your own infrastructure for maximum control and privacy.',
-      status: 'planned',
+      status: 'in-progress',
       category: 'Platform',
     },
     {
       id: 'federation',
       title: 'Federation',
       description: 'Seamless integration with other self hosted server instances.',
-      status: 'planned',
+      status: 'in-progress',
       category: 'Platform',
     },
     {
