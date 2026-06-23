@@ -47,7 +47,7 @@
     </div>
 
     <nav class="hidden sm:flex items-center gap-6">
-      <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Download</a>
+      <a routerLink="/home" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Download</a>
       <a routerLink="/blog" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Blog</a>
       <a routerLink="/roadmap" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Roadmap</a>
     </nav>
@@ -82,11 +82,10 @@
     <!-- Mobile menu -->
     <div [class.hidden]="!isMenuOpen"
          class="absolute top-[calc(100%+8px)] left-0 w-full bg-white/95 backdrop-blur-md rounded-2xl border border-slate-100 shadow-xl p-4 flex flex-col gap-3 sm:hidden origin-top z-50">
-      <a href="#" (click)="isMenuOpen = false" class="text-base font-semibold text-slate-700 hover:text-indigo-600 hover:bg-slate-50 px-4 py-2.5 rounded-xl transition-colors">Download</a>
+      <a routerLink="/home" (click)="isMenuOpen = false" class="text-base font-semibold text-slate-700 hover:text-indigo-600 hover:bg-slate-50 px-4 py-2.5 rounded-xl transition-colors">Download</a>
       <a routerLink="/blog" (click)="isMenuOpen = false" class="text-base font-semibold text-slate-700 hover:text-indigo-600 hover:bg-slate-50 px-4 py-2.5 rounded-xl transition-colors">Blog</a>
       <a routerLink="/roadmap" (click)="isMenuOpen = false" class="text-base font-semibold text-slate-700 hover:text-indigo-600 hover:bg-slate-50 px-4 py-2.5 rounded-xl transition-colors">Roadmap</a>
-      <a href="#" (click)="isMenuOpen = false" class="text-base font-semibold text-slate-700 hover:text-indigo-600 hover:bg-slate-50 px-4 py-2.5 rounded-xl transition-colors">Contact</a>
-      <!-- Discord in mobile menu -->
+
       <div class="border-t border-slate-100 pt-3 mt-1">
         <a href="https://discord.gg/mZVAaz6F4"
            target="_blank" rel="noopener noreferrer"
