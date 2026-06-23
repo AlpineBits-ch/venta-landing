@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
     <section class="pt-40 pb-20 px-4 min-h-screen">
       <div class="max-w-3xl mx-auto">
         <div class="bg-white/90 backdrop-blur-md rounded-2xl p-8 sm:p-12 shadow-lg legal-prose">
-          <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Impressum</h1>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Imprint</h1>
 
           <h2>Company</h2>
           <address>
