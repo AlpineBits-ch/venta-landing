@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
       <div class="max-w-3xl mx-auto">
         <div class="bg-white/90 backdrop-blur-md rounded-2xl p-8 sm:p-12 shadow-lg legal-prose">
           <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Privacy Policy</h1>
-          <p class="text-slate-500 text-sm mb-8">Last updated: May 17, 2025</p>
+          <p class="text-slate-500 text-sm mb-8">Last updated: August 4, 2026</p>
 
           <p>AlpineBits KLG ("we", "us", or "our") operates Venta (venta.gg), a secure messaging and communication platform. Privacy is not an afterthought for us. It is the reason Venta exists. This policy explains what data we collect, why we collect it, and how we protect it.</p>
 
@@ -44,9 +44,11 @@ import { RouterLink } from '@angular/router';
 
           <h2 id="p2">2. Data We Collect</h2>
 
-          <p><strong>Account data</strong>: When you register, we collect your username, email address, and a hashed representation of your password. We never store passwords in plaintext. A profile picture is optional.</p>
+          <p><strong>Account data</strong>: When you register, we collect your username, email address, and a hashed representation of your password. We never store passwords in plaintext. A profile picture is optional. If you provide a date of birth, we retain it to apply age-appropriate protections to your account.</p>
 
-          <p><strong>Message metadata</strong>: Due to end-to-end encryption, we cannot read the content of your private messages or calls. We do store metadata necessary to route and deliver messages: sender and recipient identifiers, timestamps, and delivery status. We do not store message content on our servers beyond the encrypted payload required for delivery.</p>
+          <p><strong>Message content</strong>: Messages you send are stored on our servers so that they remain available in your conversation history across your devices. Private messages and direct calls are end-to-end encrypted, meaning we store the encrypted payload and cannot read its contents. See section 4.</p>
+
+          <p><strong>Message metadata</strong>: We store metadata necessary to route, deliver and display messages: sender and recipient identifiers, timestamps, and delivery and read status.</p>
 
           <p><strong>Call data</strong>: WebRTC calls are established peer-to-peer where possible. We retain call metadata (participants, start time, duration) but do not record or store call audio or video.</p>
 
@@ -54,7 +56,9 @@ import { RouterLink } from '@angular/router';
 
           <p><strong>Technical and device data</strong>: We collect information about your device and operating system version, app version, IP address, and connection data. This is used to maintain compatibility, diagnose issues, and ensure platform stability.</p>
 
-          <p><strong>Crash and error reports</strong>: If the application crashes or encounters an error, we may collect a crash report containing technical diagnostics. These reports do not include message content.</p>
+          <p><strong>Security records</strong>: We keep an append-only record of security-sensitive events on your account, for example sign-ins, device registrations and removals, changes to your security settings, and access to your encrypted backups. These records exist so that unauthorised access to your account can be detected and investigated, including by you.</p>
+
+          <p><strong>Crash and error reports</strong>: If the application crashes or encounters an error, we may collect a crash report containing technical diagnostics. These reports do not include message content. Where you have not consented to diagnostic data collection, these reports are pseudonymised and stripped of identifying fields.</p>
 
           <p><strong>Download data</strong>: When you download Venta from venta.gg, our infrastructure logs the request including IP address and timestamp for security and abuse prevention.</p>
 
@@ -72,6 +76,8 @@ import { RouterLink } from '@angular/router';
 
           <h2 id="p4">4. End-to-End Encryption</h2>
           <p>Private messages and direct calls between users are protected by end-to-end encryption using the MLS (Message Layer Security) protocol. This means that the content of your private communications is encrypted on your device before it reaches our servers, and can only be decrypted by the intended recipient. AlpineBits KLG does not have the technical ability to read the content of end-to-end encrypted messages or calls.</p>
+          <p>We do, however, store the encrypted payload for as long as the message exists in your conversation history, so that your messages remain available to you across devices. Encryption protects the content from us; it does not mean the message is discarded after delivery.</p>
+          <p>End-to-end encryption does not conceal metadata. We can still see who communicates with whom, and when.</p>
           <p>Guild channel messages are encrypted in transit and at rest on our servers, but are not end-to-end encrypted across all members by default. We are working toward expanding E2EE coverage in future releases.</p>
 
           <h2 id="p5">5. Data Sharing</h2>
@@ -84,9 +90,12 @@ import { RouterLink } from '@angular/router';
           <p>Any third-party processors we engage are contractually required to handle your data only as directed by us and in accordance with applicable data protection law.</p>
 
           <h2 id="p6">6. Data Retention</h2>
-          <p>We retain your account data for as long as your account is active. If you delete your account, we will delete or anonymize your personal data within 30 days, except where we are required to retain it for legal or compliance purposes.</p>
-          <p>Message metadata and technical logs are retained for a maximum of 90 days for security and abuse prevention purposes, after which they are deleted.</p>
-          <p>Encrypted message payloads are deleted from our servers once delivery is confirmed.</p>
+          <p><strong>Account and message data.</strong> We retain your account data, and the messages in your conversations, for as long as your account is active. Messages are not deleted automatically after delivery; they remain available in your history until you or another participant deletes them, or until an account is deleted.</p>
+          <p><strong>Your own retention controls.</strong> You can set your account to automatically delete the messages you have sent after a period you choose. This is off by default and applies only to your own messages.</p>
+          <p><strong>Connection and session records.</strong> IP address and device information attached to a sign-in session are removed after 90 days. Records of ended sessions are deleted after 180 days.</p>
+          <p><strong>Security records.</strong> The append-only security records described in section 2 are retained for the lifetime of the account, because their purpose is to make past unauthorised access detectable. IP addresses attached to them are removed after 180 days.</p>
+          <p><strong>Data exports.</strong> An export you request is available to download for 7 days, after which the archive is deleted.</p>
+          <p><strong>Account deletion.</strong> When you request deletion, your account enters a 30-day grace period during which you can cancel and recover it. Sign-in is blocked immediately. After the grace period ends, we erase or anonymise your personal data across our services. Some records are retained in anonymised form where they are referenced by other users' data, for example a message you sent in a shared conversation will show as coming from a deleted user rather than disappearing from their history. Where we are required to retain data for legal or compliance purposes, we retain only what is required.</p>
 
           <h2 id="p7">7. Your Rights</h2>
           <p>Under the Swiss nFADP and, where applicable, the GDPR, you have the following rights regarding your personal data:</p>
@@ -105,6 +114,7 @@ import { RouterLink } from '@angular/router';
 
           <h2 id="p9">9. Children</h2>
           <p>Venta is not directed at children under the age of 13. We do not knowingly collect personal data from children under 13. If you believe a child under 13 has provided us with personal data, please contact us at <a href="mailto:legal@venta.gg">legal&#64;venta.gg</a> and we will delete it promptly.</p>
+          <p>Where an account's recorded date of birth indicates the account holder is a minor, we apply additional protections automatically: personalisation is disabled, the account cannot be found by email address or phone number, and who may contact the account holder directly is restricted. These protections cannot be switched off while the account holder is a minor.</p>
 
           <h2 id="p10">10. Cookies</h2>
           <p>We use a limited number of cookies on venta.gg. Please see our <a routerLink="/cookie-policy">Cookie Policy</a> for full details.</p>
