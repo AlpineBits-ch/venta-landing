@@ -56,6 +56,8 @@ Still here, still honest.
 
 It is still a beta and it still behaves like one. Things break, we fix them, we ship again - often. What changed is that the foundation is not a question mark anymore. Self hosting and federation were the two things that made this project worth doing instead of being clone number six hundred, and they both work now.
 
+While I am at it, because it comes up and it should not be something you have to go digging for: the backend is open source, under AGPL-3.0. If you are going to trust something with your messages you should be able to read it first, and if you host it for other people, they get that same right from you. The mobile app, the Isle bridge and this website are public too. The desktop client is not, yet.
+
 Same as last time: if something is broken, tell us. It gets read.`,
     },
     {
