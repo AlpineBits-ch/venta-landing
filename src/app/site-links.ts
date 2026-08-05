@@ -7,6 +7,8 @@
  */
 export const DISCORD_INVITE = 'https://discord.gg/RX7VTTKAqa';
 export const GITHUB_URL = 'https://github.com/orgs/AlpineBits-ch/repositories';
+/** The server itself - AGPL-3.0, which is the part that matters to self-hosters. */
+export const BACKEND_REPO_URL = 'https://github.com/AlpineBits-ch/AlpineBackend';
 export const DOCS_URL = 'https://docs.venta.gg';
 export const SUPPORT_URL = 'https://support.venta.gg';
 export const STATUS_URL = 'https://status.venta.gg';

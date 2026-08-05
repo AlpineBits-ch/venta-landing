@@ -12,6 +12,7 @@ import { RouterLink } from '@angular/router';
 import { IconComponent } from '../ui/icon';
 import { MockGuildComponent, MockVoiceComponent, MockWikiComponent } from '../ui/product-mock';
 import {
+  BACKEND_REPO_URL,
   DISCORD_INVITE,
   DOCS_URL,
   DOWNLOADS,
@@ -43,6 +44,7 @@ export class Home implements OnInit {
 
   protected readonly discord = DISCORD_INVITE;
   protected readonly github = GITHUB_URL;
+  protected readonly backend = BACKEND_REPO_URL;
   protected readonly docs = DOCS_URL;
   protected readonly support = SUPPORT_URL;
   protected readonly status = STATUS_URL;
@@ -259,6 +261,11 @@ export class Home implements OnInit {
       label: 'Privacy and control',
       items: [
         {
+          icon: 'github',
+          name: 'The server is open source',
+          detail: 'AGPL-3.0, so you can audit what handles your messages instead of taking our word for it.',
+        },
+        {
           icon: 'lock',
           name: 'End-to-end encryption',
           detail:
@@ -297,6 +304,10 @@ export class Home implements OnInit {
     {
       q: 'What does it cost?',
       a: 'Nothing to use. No ads, no tracking, and nothing about you is for sale. Development is funded by us and by people who choose to chip in.',
+    },
+    {
+      q: 'Can I check what it actually does?',
+      a: 'Yes. The server is open source under AGPL-3.0, so you can read the thing that handles your messages rather than trusting a claim on a marketing page. The mobile app, the Isle bridge and this website are public too. The desktop client is not open yet.',
     },
     {
       q: 'How is this different from Discord?',
