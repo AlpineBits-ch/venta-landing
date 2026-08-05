@@ -1,0 +1,57 @@
+<section class="flex min-h-[70vh] items-center px-5 py-32 sm:px-8">
+  <div class="mx-auto w-full max-w-md">
+
+    <div class="rounded-2xl border border-line bg-card p-8 text-center">
+      <img src="logo-mark.svg" alt="" width="44" height="44" class="mx-auto h-11 w-11">
+
+      @if (!showFallback()) {
+        <h1 class="mt-6 text-xl font-semibold text-text">Opening Venta&hellip;</h1>
+        <p class="mt-2 text-sm leading-relaxed text-muted">
+          Your browser is handing this invite to the app.
+        </p>
+      } @else {
+        <h1 class="mt-6 text-xl font-semibold text-text">Nothing opened?</h1>
+        <p class="mt-2 text-sm leading-relaxed text-muted">
+          Venta has to be installed to accept an invite. Once it is, come back and try again.
+        </p>
+      }
+
+      @if (inviteId()) {
+        <p class="mt-6 font-mono text-[11px] uppercase tracking-[0.16em] text-faint">Invite</p>
+        <p class="mt-1.5 truncate rounded-lg border border-line bg-surface px-4 py-2.5 font-mono text-sm text-text">
+          {{ inviteId() }}
+        </p>
+      }
+
+      <button type="button" (click)="open()"
+              class="mt-6 w-full rounded-xl bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-hover">
+        Open in Venta
+      </button>
+
+      @if (showFallback()) {
+        <div class="mt-6 border-t border-line-soft pt-6">
+          <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-faint">Get the client</p>
+          <div class="mt-3 flex flex-col gap-2">
+            @for (target of downloads; track target.id) {
+              <a [href]="target.url"
+                 class="flex items-center gap-3 rounded-lg border border-line bg-surface px-4 py-2.5 text-left transition-colors hover:bg-raised">
+                <app-icon [name]="target.os" class="h-4 w-4 text-muted" />
+                <span class="text-sm text-text">{{ target.label }}</span>
+                <span class="ml-auto font-mono text-xs text-faint">{{ target.format }}</span>
+              </a>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <p class="mt-6 text-center text-sm text-muted">
+      Stuck?
+      <a [href]="discord" target="_blank" rel="noopener noreferrer"
+         class="text-brand-dim underline decoration-brand-dim/40 underline-offset-4 transition-colors hover:decoration-brand-dim">
+        Ask on Discord
+      </a>
+    </p>
+
+  </div>
+</section>

@@ -5,9 +5,63 @@ import {BlogPost} from './components/blog/blog.model';
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'three-rough-months-and-a-much-longer-list',
+      title: 'Three rough months and a much longer list',
+      date: 'August 5, 2026',
+      author: 'Dominic',
+      category: 'Update',
+      summary: 'Self hosting, federation, E2EE that actually works across devices, and a native The Isle integration.',
+      content: `
+
+
+## Where we've been
+
+So.. it has been about three months since the last post, and I am not going to pretend they were easy ones. Rough is the honest word for it.<br>
+But we have been heads down the entire time, and the client you can download today has very little in common with the one I wrote about in May.
+
+tldr; a lot shipped, the biggest drawbacks from the last post are gone, and we picked up a game integration along the way.
+
+## What works TODAY
+
+The big ones first, because these are the ones people kept asking about.
+
+- **Self hosting.** You can run your own instance. You sign in as \`you@yourserver.tld\` from the same client and nothing about the app changes - same guilds, same calls, same encryption, on your hardware.
+- **Federation.** Instances can talk to each other. An admin starts a handshake, the other side accepts automatically or on review, and either side can defederate later. That is a normal thing to do, not an escape hatch.
+- **E2EE, properly this time.** Private conversations and calls are MLS encrypted, and guild channels can have it switched on per channel now. More importantly the device story is fixed: you can add a device without losing your history, and you can actually back up and restore your key material. That was the single biggest drawback I listed in May and it is gone.
+- **Several accounts at once**, on several servers, and you can switch without signing out.
+- **Discord import**, so you do not have to start in an empty room.
+
+And then the pile of things that landed while we were in there: wiki, forum channels, scheduled events, moderation tools with reports and bans and an audit log, guest access, quiet hours, custom emoji, reactions and replies, link previews, bots you can install into a guild, rich presence that picks up what you are playing including from Steam, themes you can export as JSON, and English, German and French.
+
+Also you can edit your profile now. I know. It only took three months.
+
+## The Isle
+
+Somewhere in the middle of all that we built a native The Isle integration for our own server. Proximity voice - the people near you in the game are the people you hear, and it follows you around instead of being a separate channel you have to remember to join.
+
+If you self host: it is opt in and off by default. I am not going to ship a game integration to people who never asked for one.
+
+## The featuren't list
+
+Still here, still honest.
+
+ - The native mobile app is in internal testing right now. It is not something you can download yet.
+ - Guild webhooks are in progress.
+ - Linux ships for Debian, Ubuntu, Fedora and RHEL, but window handling and voice still need work. Windows is still the smoother ride.
+ - The web client is planned and not started.
+ - A public API for building your own clients is planned.
+ - New sound design - an actual audio designer, one who knows what he is doing, is redoing every sound in the app. This one I am genuinely excited about.
+
+## Where the project stands
+
+It is still a beta and it still behaves like one. Things break, we fix them, we ship again - often. What changed is that the foundation is not a question mark anymore. Self hosting and federation were the two things that made this project worth doing instead of being clone number six hundred, and they both work now.
+
+Same as last time: if something is broken, tell us. It gets read.`,
+    },
+    {
       slug: 'initial-release-and-a-bit-of-story-time',
       title: 'Initial release and a bit of story time',
-      date: 'May 17, 2025',
+      date: 'May 17, 2026',
       author: 'Dominic',
       category: 'About',
       summary: 'How we went from building a game to building a discord alternative.',

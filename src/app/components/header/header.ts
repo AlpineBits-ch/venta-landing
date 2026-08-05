@@ -1,40 +1,46 @@
-import {Component, HostListener} from '@angular/core';
-import {RouterLink} from '@angular/router';
+import { ChangeDetectionStrategy, Component, HostListener, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { IconComponent } from '../ui/icon';
+import { DISCORD_INVITE, DOCS_URL, GITHUB_URL, SUPPORT_URL } from '../../site-links';
 
 @Component({
   selector: 'app-header',
-  imports: [
-    RouterLink
-  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [RouterLink, IconComponent],
   templateUrl: './header.html',
-  styleUrl: './header.css',
 })
 export class Header {
-  isMenuOpen: boolean = false;
+  protected readonly menuOpen = signal(false);
+  protected readonly scrolled = signal(false);
 
-  /**
-   * Toggles the mobile menu open/closed state
-   */
-  toggleMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen;
+  protected readonly discord = DISCORD_INVITE;
+  protected readonly github = GITHUB_URL;
+  protected readonly docs = DOCS_URL;
+  protected readonly support = SUPPORT_URL;
+
+  protected toggleMenu(): void {
+    this.menuOpen.update((open) => !open);
   }
 
-  /**
-   * Closes the mobile menu when a navigation item is clicked
-   */
-  closeMenu(): void {
-    this.isMenuOpen = false;
+  protected closeMenu(): void {
+    this.menuOpen.set(false);
   }
 
-  /**
-   * Defensive Check: Automatically close the mobile menu drawer
-   * if the window is resized larger than the mobile breakpoint (640px)
-   */
-  @HostListener('window:resize', ['$event'])
-  onResize(event: UIEvent): void {
-    const windowWidth = (event.target as Window).innerWidth;
-    if (windowWidth >= 640 && this.isMenuOpen) {
-      this.isMenuOpen = false;
+  @HostListener('window:scroll')
+  protected onScroll(): void {
+    this.scrolled.set(window.scrollY > 8);
+  }
+
+  /** The mobile panel has no reason to stay open once the layout is desktop. */
+  @HostListener('window:resize')
+  protected onResize(): void {
+    if (window.innerWidth >= 1024) {
+      this.closeMenu();
     }
+  }
+
+  @HostListener('document:keydown.escape')
+  protected onEscape(): void {
+    this.closeMenu();
   }
 }

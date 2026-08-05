@@ -1,55 +1,57 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { RoadmapService } from './roadmap.service';
 import { RoadmapItem, RoadmapStatus } from './roadmap.model';
+import { IconComponent } from '../ui/icon';
+import { DISCORD_INVITE } from '../../site-links';
 
 interface StatusColumn {
   status: RoadmapStatus;
   label: string;
-  dotColor: string;
-  badge: string;
-  statusText: string;
+  blurb: string;
+  /** Token colour class for the marker and the count. */
+  tone: string;
 }
 
 @Component({
   selector: 'app-roadmap',
-  imports: [],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [RouterLink, IconComponent],
   templateUrl: './roadmap.html',
 })
 export class RoadmapComponent {
-  private roadmapService = inject(RoadmapService);
+  private readonly roadmap = inject(RoadmapService);
 
-  readonly columns: StatusColumn[] = [
-    {
-      status: 'done',
-      label: 'Shipped',
-      dotColor: '#10b981',
-      badge: 'bg-emerald-100 text-emerald-700',
-      statusText: 'text-emerald-600',
-    },
+  protected readonly discord = DISCORD_INVITE;
+
+  /**
+   * Only unfinished work is columned. Shipped items outnumber the rest several
+   * times over, and a column that long stops being a column.
+   */
+  protected readonly columns: StatusColumn[] = [
     {
       status: 'in-progress',
-      label: 'In Progress',
-      dotColor: '#3b82f6',
-      badge: 'bg-blue-100 text-blue-700',
-      statusText: 'text-blue-600',
+      label: 'In flight',
+      blurb: 'Being built now.',
+      tone: 'text-connecting',
     },
     {
       status: 'planned',
       label: 'Planned',
-      dotColor: '#6366f1',
-      badge: 'bg-indigo-100 text-indigo-700',
-      statusText: 'text-indigo-600',
+      blurb: 'Committed, not started.',
+      tone: 'text-brand-dim',
     },
     {
       status: 'considering',
       label: 'Considering',
-      dotColor: '#94a3b8',
-      badge: 'bg-slate-100 text-slate-600',
-      statusText: 'text-slate-500',
+      blurb: 'Tell us if it matters.',
+      tone: 'text-faint',
     },
   ];
 
-  itemsFor(status: RoadmapStatus): RoadmapItem[] {
-    return this.roadmapService.getByStatus(status);
+  protected readonly shipped: RoadmapItem[] = this.roadmap.getByStatus('done');
+
+  protected itemsFor(status: RoadmapStatus): RoadmapItem[] {
+    return this.roadmap.getByStatus(status);
   }
 }

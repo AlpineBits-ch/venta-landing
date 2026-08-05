@@ -5,11 +5,11 @@ import { RouterLink } from '@angular/router';
   selector: 'app-privacy',
   imports: [RouterLink],
   template: `
-    <section class="pt-40 pb-20 px-4 min-h-screen">
+    <section class="px-5 pb-24 pt-32 sm:px-8 sm:pt-40">
       <div class="max-w-3xl mx-auto">
-        <div class="bg-white/90 backdrop-blur-md rounded-2xl p-8 sm:p-12 shadow-lg legal-prose">
-          <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Privacy Policy</h1>
-          <p class="text-slate-500 text-sm mb-8">Last updated: August 4, 2026</p>
+        <div class="rounded-2xl border border-line bg-card p-7 sm:p-10 prose-dark">
+          <h1 class="display text-3xl text-text sm:text-4xl mb-4">Privacy Policy</h1>
+          <p class="font-mono text-xs text-faint mb-8">Last updated: August 5, 2026</p>
 
           <p>AlpineBits KLG ("we", "us", or "our") operates Venta (venta.gg), a secure messaging and communication platform. Privacy is not an afterthought for us. It is the reason Venta exists. This policy explains what data we collect, why we collect it, and how we protect it.</p>
 
@@ -24,9 +24,10 @@ import { RouterLink } from '@angular/router';
             <li><a href="#p7">Your Rights</a></li>
             <li><a href="#p8">Security</a></li>
             <li><a href="#p9">Children</a></li>
-            <li><a href="#p10">Cookies</a></li>
-            <li><a href="#p11">Changes to This Policy</a></li>
-            <li><a href="#p12">Contact</a></li>
+            <li><a href="#p10">Links, Previews and Embedded Players</a></li>
+            <li><a href="#p11">Cookies</a></li>
+            <li><a href="#p12">Changes to This Policy</a></li>
+            <li><a href="#p13">Contact</a></li>
           </ol>
 
           <h2 id="p1">1. Who We Are</h2>
@@ -88,6 +89,7 @@ import { RouterLink } from '@angular/router';
             <li><strong>Legal authorities</strong>: If required by Swiss law, a valid court order, or to protect the safety of users or the public, we may disclose account-level data (not message content, which we cannot access for E2EE messages) to competent authorities.</li>
           </ol>
           <p>Any third-party processors we engage are contractually required to handle your data only as directed by us and in accordance with applicable data protection law.</p>
+          <p>Separately from the above, starting an embedded media player transmits data directly from your device to the service that provides it. That is not a disclosure we make on your behalf and those services are not our processors; see section 10.</p>
 
           <h2 id="p6">6. Data Retention</h2>
           <p><strong>Account and message data.</strong> We retain your account data, and the messages in your conversations, for as long as your account is active. Messages are not deleted automatically after delivery; they remain available in your history until you or another participant deletes them, or until an account is deleted.</p>
@@ -116,13 +118,19 @@ import { RouterLink } from '@angular/router';
           <p>Venta is not directed at children under the age of 13. We do not knowingly collect personal data from children under 13. If you believe a child under 13 has provided us with personal data, please contact us at <a href="mailto:legal@venta.gg">legal&#64;venta.gg</a> and we will delete it promptly.</p>
           <p>Where an account's recorded date of birth indicates the account holder is a minor, we apply additional protections automatically: personalisation is disabled, the account cannot be found by email address or phone number, and who may contact the account holder directly is restricted. These protections cannot be switched off while the account holder is a minor.</p>
 
-          <h2 id="p10">10. Cookies</h2>
-          <p>We use a limited number of cookies on venta.gg. Please see our <a routerLink="/cookie-policy">Cookie Policy</a> for full details.</p>
+          <h2 id="p10">10. Links, Previews and Embedded Players</h2>
+          <p><strong>Link previews.</strong> When a link is posted in a conversation, we fetch the linked page from our own servers to build a preview card showing its title, description and image. Any preview image is copied to our own storage and served from our own domain. This means the linked website is contacted by us, once, and not by each person who reads the message: it does not receive your IP address, your device details, or any indication that you saw the link. We store the resulting preview and the copied image alongside the message. Previews are not generated for end-to-end encrypted conversations, because we cannot read those messages.</p>
+          <p><strong>Embedded players.</strong> Links to a fixed list of services, YouTube, Spotify, Vimeo and Twitch, can be played inside Venta. <strong>Nothing is loaded from those services until you press play.</strong> When you do, that service's player is loaded into the page and the service then receives your IP address, your browser and device details, and information about what you played. It may also set its own cookies and similar storage on your device. If you are signed in to that service, it may associate that activity with your account there.</p>
+          <p>This is a transfer of data to a third party that we do not control and do not receive a copy of. It happens only on your deliberate action, each time, and the legal basis is your consent given by that action. The YouTube player is loaded from a privacy-enhanced address that does not set Google's advertising cookies. Each service's own privacy and cookie policy governs what it does with the data; those are linked from our <a routerLink="/cookie-policy">Cookie Policy</a>.</p>
+          <p>If you never press play, none of this occurs. Your ability to read, send and receive messages does not depend on it.</p>
 
-          <h2 id="p11">11. Changes to This Policy</h2>
+          <h2 id="p11">11. Cookies</h2>
+          <p>We use a limited number of cookies on venta.gg, and third-party cookies may be set by an embedded player after you press play as described in section 10. Please see our <a routerLink="/cookie-policy">Cookie Policy</a> for full details.</p>
+
+          <h2 id="p12">12. Changes to This Policy</h2>
           <p>We may update this Privacy Policy from time to time. We will notify registered users of material changes by email or via an in-app notice. The "last updated" date at the top of this page reflects the most recent revision. Continued use of Venta after changes take effect constitutes acceptance of the revised policy.</p>
 
-          <h2 id="p12">12. Contact</h2>
+          <h2 id="p13">13. Contact</h2>
           <p>If you have any questions about this Privacy Policy or how we handle your data, please contact:</p>
           <address>
             AlpineBits KLG<br>

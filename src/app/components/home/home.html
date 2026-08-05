@@ -1,151 +1,371 @@
+<!-- ══ Hero ═══════════════════════════════════════════════════════════════ -->
+<section class="relative px-5 pb-20 pt-32 sm:px-8 sm:pt-40">
+  <div class="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-12">
 
+    <div>
+      <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-faint">
+        Beta &middot; Windows and Linux &middot; Free
+      </p>
 
-<div class="flex-1 flex flex-col justify-center items-center px-4 sm:px-10 z-10 max-w-4xl mx-auto text-center gap-6 pt-48 pb-12 w-full box-border">
+      <h1 class="display mt-5 text-[2.25rem] text-text sm:text-[2.875rem] lg:text-[3.125rem]">
+        Your community shouldn't live on someone else's server.
+      </h1>
 
-  <div class="relative inline-block w-full">
-    <h1 class="text-3xl sm:text-6xl font-extrabold text-white tracking-tight drop-shadow-md break-words w-full">
-      A messenger application that <span class="text-blue-200">doesn't sell your data.</span>
-    </h1>
-    <div class="absolute -top-4 -right-2 sm:-top-6 sm:-right-4 rotate-3">
-    <span class="inline-flex items-center gap-1.5 bg-yellow-400 text-yellow-900 text-xs sm:text-sm font-black px-3 py-1 rounded-full shadow-lg tracking-wide uppercase">
-      <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-      </svg>
-      Early Beta
-    </span>
+      <p class="mt-6 max-w-lg text-[17px] leading-relaxed text-muted">
+        Venta is chat, voice and video for communities. Use ours, run your own, or connect the
+        two - it is the same client either way.
+      </p>
+
+      <!-- The signature: a Venta login, with the half that is yours to choose
+           doing the talking. -->
+      <div class="mt-9 max-w-md">
+        <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-faint">Sign in as</p>
+        <div class="mt-2.5 flex items-center gap-3 rounded-xl border border-line bg-card px-4 py-3.5">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-line bg-raised"
+                [class.text-brand-dim]="isCustomHost()"
+                [class.text-muted]="!isCustomHost()">
+            <app-icon [name]="isCustomHost() ? 'server' : 'cloud'" class="h-4 w-4" />
+          </span>
+          <span class="min-w-0 truncate font-mono text-[15px] text-text sm:text-lg">
+            <span class="text-muted">you&#64;</span><span>{{ typedDomain() }}</span
+            ><span class="ml-px inline-block w-[2px] translate-y-[2px] bg-brand-dim"
+                   [class.caret]="animating()"
+                   [style.height.em]="1.05"></span>
+          </span>
+        </div>
+        <p class="mt-2.5 text-[13px] leading-relaxed text-faint">
+          Everything after the &#64; is a server. Ours is one of them.
+        </p>
+      </div>
+
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <!-- Split control: the button downloads for the visitor's OS, the
+             chevron opens everything else. -->
+        <div class="flex items-stretch overflow-hidden rounded-xl bg-brand">
+          <a [href]="primary().url"
+             class="flex items-center gap-2.5 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-hover">
+            <app-icon [name]="primary().os === 'linux' ? 'linux' : 'windows'" class="h-4 w-4" />
+            Download for {{ primary().label }}
+          </a>
+          <div class="w-px bg-white/20"></div>
+          <div class="relative">
+            <button type="button"
+                    (click)="toggleMenu($event)"
+                    [attr.aria-expanded]="menuOpen()"
+                    aria-label="More download options"
+                    class="flex h-full items-center px-3 text-white transition-colors hover:bg-brand-hover">
+              <app-icon name="chevronDown" class="h-4 w-4 transition-transform"
+                        [class.rotate-180]="menuOpen()" />
+            </button>
+
+            @if (menuOpen()) {
+              <div class="absolute right-0 top-full z-30 mt-2 w-72 overflow-hidden rounded-xl border border-line bg-card shadow-2xl shadow-black/50"
+                   (click)="$event.stopPropagation()">
+                @for (target of downloads; track target.id) {
+                  <a [href]="target.url"
+                     class="flex items-center gap-3 border-b border-line-soft px-4 py-3 transition-colors last:border-b-0 hover:bg-raised">
+                    <app-icon [name]="target.os" class="h-4 w-4 text-muted" />
+                    <span class="min-w-0 flex-1">
+                      <span class="flex items-center gap-2">
+                        <span class="text-sm font-medium text-text">{{ target.label }}</span>
+                        <span class="font-mono text-xs text-faint">{{ target.format }}</span>
+                      </span>
+                      @if (target.note) {
+                        <span class="mt-0.5 block text-xs text-faint">{{ target.note }}</span>
+                      }
+                    </span>
+                    @if (target.recommended) {
+                      <span class="rounded-full bg-online/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-online">
+                        For you
+                      </span>
+                    }
+                  </a>
+                }
+              </div>
+            }
+          </div>
+        </div>
+
+        <a href="#self-hosting"
+           class="inline-flex items-center gap-2 rounded-xl border border-line px-5 py-3 text-sm font-semibold text-text transition-colors hover:bg-card">
+          Run it yourself
+          <app-icon name="arrowRight" class="h-4 w-4 text-muted" />
+        </a>
+      </div>
+
+      <p class="mt-5 text-[13px] text-faint">
+        In active beta - things break, and we fix them fast.
+        <a [href]="status" target="_blank" rel="noopener noreferrer"
+           class="text-muted underline decoration-line underline-offset-4 transition-colors hover:text-text">
+          Service status
+        </a>
+      </p>
     </div>
+
+    <!-- Product, not illustration. -->
+    <div class="relative">
+      <app-mock-guild />
+    </div>
+
   </div>
+</section>
 
-  <h3 class="text-lg sm:text-2xl font-medium text-blue-100 opacity-90 w-full">
-    Built by gamers for gamers.
-  </h3>
+<!-- ══ Fact strip ═════════════════════════════════════════════════════════ -->
+<section class="border-y border-line-soft bg-surface/60">
+  <div class="mx-auto grid max-w-6xl grid-cols-2 divide-line-soft px-5 sm:px-8 md:grid-cols-4 md:divide-x">
+    @for (fact of [
+      { k: 'Encryption', v: 'MLS end-to-end' },
+      { k: 'Hosting', v: 'Ours or yours' },
+      { k: 'Business model', v: 'Not your data' },
+      { k: 'Operated from', v: 'Switzerland' }
+    ]; track fact.k) {
+      <div class="px-1 py-6 md:px-6">
+        <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-faint">{{ fact.k }}</p>
+        <p class="mt-1.5 text-[15px] font-medium text-text">{{ fact.v }}</p>
+      </div>
+    }
+  </div>
+</section>
 
-  <p class="text-base sm:text-lg text-slate-200 max-w-2xl leading-relaxed w-full">
-    Venta.gg is a new but powerful platform for instant messaging and WebRTC. Built for communities, groups, and friends.
-  </p>
+<!-- ══ Self-hosting and federation ════════════════════════════════════════ -->
+<section id="self-hosting" class="scroll-mt-24 px-5 py-24 sm:px-8 sm:py-32">
+  <div class="mx-auto max-w-6xl">
 
-  <div class="relative inline-flex items-stretch rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 bg-white max-w-full" id="download-split-button">
+    <div class="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+      <div>
+        <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-faint">Self-hosting and federation</p>
+        <h2 class="display mt-4 text-3xl text-text sm:text-[2.5rem]">
+          Run your own instance. Or don't.
+        </h2>
+        <p class="mt-5 text-[17px] leading-relaxed text-muted">
+          Venta is one client and many servers. Point it at ours and you have an account in a
+          minute. Point it at your own and nothing about the app changes - same guilds, same
+          calls, same encryption, on hardware you control.
+        </p>
+        <p class="mt-4 text-[17px] leading-relaxed text-muted">
+          Instances can also talk to each other. An admin starts a handshake with another host,
+          the other side accepts - automatically or by review - and from then on the two are
+          federated. Change your mind and you can defederate; that is a normal thing to do, not
+          an escape hatch.
+        </p>
 
-    <a href="https://api.venta.gg/api/v1/update/download/latest/windows-x86_64-msi"
-       class="text-blue-600 font-bold px-6 sm:px-8 py-4 rounded-l-xl text-xs sm:text-sm flex items-center gap-2 hover:bg-blue-50 transition-all duration-200 whitespace-nowrap">
-      Download for Windows
-    </a>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a [href]="github" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-sm font-semibold text-text transition-colors hover:bg-card">
+            <app-icon name="github" class="h-4 w-4" />
+            Source on GitHub
+          </a>
+          <a [href]="docs" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-sm font-semibold text-text transition-colors hover:bg-card">
+            API docs
+            <app-icon name="externalLink" class="h-3.5 w-3.5 text-muted" />
+          </a>
+        </div>
+      </div>
 
-    <div class="w-px bg-blue-100 self-stretch my-2"></div>
-
-    <div class="relative" (click)="$event.stopPropagation()">
-      <button type="button"
-              (click)="toggleDropdown($event)"
-              [attr.aria-haspopup]="true"
-              [attr.aria-expanded]="isOpen"
-              class="text-blue-600 hover:bg-blue-50 px-3 sm:px-4 rounded-r-xl transition-all duration-200 flex items-center justify-center h-full">
-        <svg class="w-5 h-5 transition-transform duration-200"
-             [class.rotate-180]="isOpen"
-             fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </button>
-
-      <div [class.hidden]="!isOpen"
-           [class.scale-95]="!isOpen"
-           [class.opacity-0]="!isOpen"
-           [class.scale-100]="isOpen"
-           [class.opacity-100]="isOpen"
-           class="absolute right-0 top-full mt-2 w-64 sm:w-72 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50 transform origin-top transition-all duration-150">
-
-        <a href="https://api.venta.gg/api/v1/update/download/latest/windows-x86_64-msi"
-           class="w-full text-left px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 flex items-center justify-between transition-colors">
-          <span>Windows (.msi)</span>
-          <span class="text-xs font-normal text-green-600 bg-green-50 px-2 py-0.5 rounded-full">Recommended</span>
-        </a>
-
-        <hr class="border-gray-100 my-1">
-
-        <a href="https://api.venta.gg/api/v1/update/download/latest/linux-x86_64"
-           class="w-full text-left px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 flex flex-col transition-colors">
-          <div class="flex items-center justify-between w-full">
-            <span>Linux (.deb)</span>
-            <span class="text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full uppercase tracking-wider">Unsupported</span>
+      <!-- Two instances and the link between them. The states are the ones the
+           admin panel actually reports. -->
+      <div class="rounded-2xl border border-line bg-card p-6 sm:p-8">
+        <div class="flex items-stretch gap-3 sm:gap-5">
+          <div class="flex-1 rounded-xl border border-line bg-surface p-4">
+            <app-icon name="cloud" class="h-5 w-5 text-muted" />
+            <p class="mt-3 font-mono text-sm text-text">venta.gg</p>
+            <p class="mt-1 text-xs leading-relaxed text-faint">Our instance. Nothing to set up.</p>
           </div>
-          <span class="text-[11px] text-gray-400 font-normal mt-0.5">May not work on your distribution yet.</span>
-        </a>
 
-        <a href="https://api.venta.gg/api/v1/update/download/latest/linux-x86_64-rpm"
-           class="w-full text-left px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 flex flex-col transition-colors">
-          <div class="flex items-center justify-between w-full">
-            <span>Linux (.rpm)</span>
-            <span class="text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full uppercase tracking-wider">Unsupported</span>
+          <div class="flex w-20 shrink-0 flex-col items-center justify-center gap-2 sm:w-28">
+            <div class="h-px w-full bg-linear-to-r from-line via-brand-dim to-line"></div>
+            <span class="rounded-full border border-online/30 bg-online/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-online">
+              Active
+            </span>
           </div>
-          <span class="text-[11px] text-gray-400 font-normal mt-0.5">May not work on your distribution yet.</span>
-        </a>
 
+          <div class="flex-1 rounded-xl border border-brand/40 bg-surface p-4">
+            <app-icon name="server" class="h-5 w-5 text-brand-dim" />
+            <p class="mt-3 font-mono text-sm text-text">yourserver.tld</p>
+            <p class="mt-1 text-xs leading-relaxed text-faint">Your instance. Your rules.</p>
+          </div>
+        </div>
+
+        <div class="mt-7 border-t border-line-soft pt-6">
+          <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-faint">
+            Where a link can stand
+          </p>
+          <dl class="mt-4 flex flex-col gap-3">
+            @for (state of [
+              { n: 'Pending', d: 'Asked to federate, waiting on the other side.' },
+              { n: 'Active', d: 'Federated. Traffic flows both ways.' },
+              { n: 'Blocked', d: 'Refused, and it stays refused.' },
+              { n: 'Defederated', d: 'Was active, now cut. Reversible.' }
+            ]; track state.n) {
+              <div class="flex gap-3 text-sm">
+                <dt class="w-28 shrink-0 font-mono text-[13px] text-brand-dim">{{ state.n }}</dt>
+                <dd class="text-muted">{{ state.d }}</dd>
+              </div>
+            }
+          </dl>
+          <p class="mt-5 text-xs leading-relaxed text-faint">
+            Admins choose whether incoming requests are accepted automatically or held for review.
+          </p>
+        </div>
       </div>
     </div>
+
   </div>
+</section>
 
-  <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight drop-shadow-md mt-12">
-    What works today
-  </h1>
+<!-- ══ What's shipped ═════════════════════════════════════════════════════ -->
+<section class="border-t border-line-soft px-5 py-24 sm:px-8 sm:py-32">
+  <div class="mx-auto max-w-6xl">
 
-  <div class="bg-amber-500/20 border border-amber-500/40 backdrop-blur-md rounded-xl p-5 my-6 text-left text-white shadow-lg">
-    <p class="font-bold text-amber-300 text-lg flex items-center gap-2">
-      ⚠️ Take this with a grain of salt!
+    <div class="max-w-2xl">
+      <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-faint">What's shipped</p>
+      <h2 class="display mt-4 text-3xl text-text sm:text-[2.5rem]">
+        Everything below works today.
+      </h2>
+      <p class="mt-5 text-[17px] leading-relaxed text-muted">
+        Not a preview list. If it is here, it is in the client you can download on this page.
+        What isn't finished is on the
+        <a routerLink="/roadmap" class="text-brand-dim underline decoration-brand-dim/40 underline-offset-4 transition-colors hover:decoration-brand-dim">roadmap</a>,
+        with its real status.
+      </p>
+    </div>
+
+    <div class="mt-16 flex flex-col gap-16">
+      @for (group of groups; track group.label) {
+        <div class="grid gap-8 lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-12">
+          <h3 class="font-mono text-[11px] uppercase tracking-[0.16em] text-faint lg:pt-1">
+            {{ group.label }}
+          </h3>
+
+          <div class="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+            @for (item of group.items; track item.name) {
+              <div class="flex gap-4">
+                <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-card text-brand-dim">
+                  <app-icon [name]="item.icon" class="h-[18px] w-[18px]" />
+                </span>
+                <div>
+                  <h4 class="text-[15px] font-semibold text-text">{{ item.name }}</h4>
+                  <p class="mt-1 text-sm leading-relaxed text-muted">{{ item.detail }}</p>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ See it ═════════════════════════════════════════════════════════════ -->
+<section class="border-t border-line-soft px-5 py-24 sm:px-8 sm:py-32">
+  <div class="mx-auto max-w-6xl">
+    <div class="max-w-2xl">
+      <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-faint">See it</p>
+      <h2 class="display mt-4 text-3xl text-text sm:text-[2.5rem]">The client, in use.</h2>
+    </div>
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-2">
+      <app-mock-wiki />
+      <app-mock-voice />
+    </div>
+  </div>
+</section>
+
+<!-- ══ Download ═══════════════════════════════════════════════════════════ -->
+<section id="download" class="scroll-mt-24 border-t border-line-soft px-5 py-24 sm:px-8 sm:py-32">
+  <div class="mx-auto max-w-6xl">
+    <div class="max-w-2xl">
+      <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-faint">Download</p>
+      <h2 class="display mt-4 text-3xl text-text sm:text-[2.5rem]">Get the client.</h2>
+      <p class="mt-5 text-[17px] leading-relaxed text-muted">
+        Free, and it updates itself.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-4 sm:grid-cols-3">
+      @for (target of downloads; track target.id) {
+        <a [href]="target.url"
+           class="group flex flex-col rounded-xl border border-line bg-card p-6 transition-colors hover:border-brand/50 hover:bg-raised">
+          <app-icon [name]="target.os" class="h-6 w-6 text-muted transition-colors group-hover:text-brand-dim" />
+          <span class="mt-5 flex items-baseline gap-2">
+            <span class="text-lg font-semibold text-text">{{ target.label }}</span>
+            <span class="font-mono text-sm text-faint">{{ target.format }}</span>
+          </span>
+          <span class="mt-1 text-sm text-muted">{{ target.note ?? 'Recommended build' }}</span>
+          <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-dim">
+            Download
+            <app-icon name="arrowRight" class="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </span>
+        </a>
+      }
+    </div>
+
+    <div class="mt-6 flex flex-col gap-3 rounded-xl border border-line-soft bg-surface/60 p-5 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-sm text-muted">
+        <span class="font-medium text-text">Phones are next.</span>
+        A native mobile app is in internal testing - not downloadable yet.
+      </p>
+      <a [href]="discord" target="_blank" rel="noopener noreferrer"
+         class="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-brand-dim transition-colors hover:text-text">
+        Hear about it first
+        <app-icon name="arrowRight" class="h-4 w-4" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ════════════════════════════════════════════════════════════════ -->
+<section class="border-t border-line-soft px-5 py-24 sm:px-8 sm:py-32">
+  <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-16">
+    <div>
+      <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-faint">Questions</p>
+      <h2 class="display mt-4 text-3xl text-text">Fair things to ask.</h2>
+    </div>
+
+    <div class="flex flex-col">
+      @for (entry of faq; track entry.q) {
+        <div class="border-b border-line-soft py-6 first:pt-0">
+          <h3 class="text-[17px] font-semibold text-text">{{ entry.q }}</h3>
+          <p class="mt-2.5 max-w-2xl leading-relaxed text-muted">{{ entry.a }}</p>
+        </div>
+      }
+
+      <p class="pt-6 text-muted">
+        Something else?
+        <a [href]="support" target="_blank" rel="noopener noreferrer"
+           class="text-brand-dim underline decoration-brand-dim/40 underline-offset-4 transition-colors hover:decoration-brand-dim">Support</a>
+        answers slowly but properly;
+        <a [href]="discord" target="_blank" rel="noopener noreferrer"
+           class="text-brand-dim underline decoration-brand-dim/40 underline-offset-4 transition-colors hover:decoration-brand-dim">Discord</a>
+        answers fast.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Close ══════════════════════════════════════════════════════════════ -->
+<section class="border-t border-line-soft px-5 py-24 sm:px-8 sm:py-32">
+  <div class="mx-auto max-w-3xl text-center">
+    <h2 class="display text-3xl text-text sm:text-[2.75rem]">
+      Bring your people. Keep the keys.
+    </h2>
+    <p class="mx-auto mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
+      Venta is small, in beta, and built by people who would rather answer to you than to
+      advertisers.
     </p>
-    <p class="mt-2 text-slate-200 text-sm sm:text-base leading-relaxed">
-      While these features are active, we are still in active development. For the full, transparent breakdown of exactly how these features work today - and the history behind them - be sure to check out our blog post:
-      <a routerLink="/blog/initial-release-and-a-bit-of-story-time" class="underline font-semibold text-amber-300 hover:text-amber-200 transition-colors">
-        Initial Release & A Bit of Story Time
-      </a>.
-    </p>
+    <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
+      <a [href]="primary().url"
+         class="inline-flex items-center gap-2.5 rounded-xl bg-brand px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-brand-hover">
+        <app-icon [name]="primary().os === 'linux' ? 'linux' : 'windows'" class="h-4 w-4" />
+        Download for {{ primary().label }}
+      </a>
+      <a [href]="discord" target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2.5 rounded-xl border border-line px-6 py-3.5 text-sm font-semibold text-text transition-colors hover:bg-card">
+        <app-icon name="discord" class="h-4 w-4" />
+        Join the Discord
+      </a>
+    </div>
   </div>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-
-    <div class="bg-white/90 p-5 rounded-xl shadow-lg backdrop-blur-md text-left h-full flex flex-col">
-      <h2 class="text-xl font-semibold text-slate-900">Instant Messaging</h2>
-      <p class="text-slate-600 mt-1 flex-1">Send messages instantly to your friends and communities.</p>
-    </div>
-
-    <div class="bg-white/90 p-5 rounded-xl shadow-lg backdrop-blur-md text-left h-full flex flex-col">
-      <h2 class="text-xl font-semibold text-slate-900">WebRTC Calls</h2>
-      <p class="text-slate-600 mt-1 flex-1">Real-time video and audio calls with up to 4 participants.</p>
-    </div>
-
-    <div class="bg-white/90 p-5 rounded-xl shadow-lg backdrop-blur-md text-left h-full flex flex-col">
-      <h2 class="text-xl font-semibold text-slate-900">Guilds</h2>
-      <p class="text-slate-600 mt-1 flex-1">Community spaces with channels, categories, wiki pages, and a granular permission system.</p>
-    </div>
-
-    <div class="bg-white/90 p-5 rounded-xl shadow-lg backdrop-blur-md text-left h-full flex flex-col">
-      <h2 class="text-xl font-semibold text-slate-900">Friend Relationships</h2>
-      <p class="text-slate-600 mt-1 flex-1">Add friends and manage your social graph with private conversations and calls.</p>
-    </div>
-
-    <div class="bg-white/90 p-5 rounded-xl shadow-lg backdrop-blur-md text-left h-full flex flex-col">
-      <h2 class="text-xl font-semibold text-slate-900">End-to-End Encryption</h2>
-      <p class="text-slate-600 mt-1 flex-1">All private messages and calls are encrypted via MLS - no one but you and your friends can read them.</p>
-    </div>
-
-  </div>
-
-  <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight drop-shadow-md mt-16">
-    See it in action
-  </h1>
-
-  <div class="w-full max-w-4xl mx-auto mt-6 bg-white/10 p-2 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-sm transition-transform duration-300 hover:scale-[1.01]">
-    <video
-      src="screen_cap.mp4"
-      autoplay
-      loop
-      muted
-      controls
-      playsinline
-      class="rounded-xl w-full h-auto object-cover shadow-inner"
-    >
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-</div>
-
-<div class="h-12 w-full"></div>
+</section>

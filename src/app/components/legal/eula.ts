@@ -4,11 +4,11 @@ import { Component } from '@angular/core';
   selector: 'app-eula',
   imports: [],
   template: `
-    <section class="pt-40 pb-20 px-4 min-h-screen">
+    <section class="px-5 pb-24 pt-32 sm:px-8 sm:pt-40">
       <div class="max-w-3xl mx-auto">
-        <div class="bg-white/90 backdrop-blur-md rounded-2xl p-8 sm:p-12 shadow-lg legal-prose">
-          <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">End User License Agreement</h1>
-          <p class="text-slate-500 text-sm mb-8">Last updated: May 19, 2026</p>
+        <div class="rounded-2xl border border-line bg-card p-7 sm:p-10 prose-dark">
+          <h1 class="display text-3xl text-text sm:text-4xl mb-4">End User License Agreement</h1>
+          <p class="font-mono text-xs text-faint mb-8">Last updated: May 19, 2026</p>
 
           <p>Venta is licensed to You (End-User) by AlpineBits KLG (UID: CHE-332.403.467), located at Dörflistrasse 6b, 5706 Boniswil, Switzerland ("Licensor"), for use only under the terms of this License Agreement.</p>
           <p>By downloading the Licensed Application from <a href="https://venta.gg">venta.gg</a>, and any update thereto (as permitted by this License Agreement), You indicate that You agree to be bound by all of the terms and conditions of this License Agreement, and that You accept this License Agreement. The platform from which you download Venta is referred to in this License Agreement as "Services."</p>

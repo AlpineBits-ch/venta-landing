@@ -1,11 +1,68 @@
 <!doctype html>
 <html lang="en">
 <head>
-
   <meta charset="utf-8">
-  <title>Venta</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- maximum-scale/user-scalable were removed deliberately: blocking pinch
+       zoom fails WCAG 1.4.4 and there is no layout here that needs it. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Venta - chat and voice you can host yourself</title>
+  <meta name="description"
+        content="Venta is chat, voice and video for communities. End-to-end encrypted with MLS, open to federation, and yours to self-host. Free for Windows and Linux.">
+  <link rel="canonical" href="https://venta.gg/">
+
+  <meta name="theme-color" content="#0b0e14">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="icon" href="logo-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="app-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Venta">
+  <meta property="og:url" content="https://venta.gg/">
+  <meta property="og:title" content="Venta - chat and voice you can host yourself">
+  <meta property="og:description"
+        content="Chat, voice and video for communities. End-to-end encrypted with MLS, open to federation, and yours to self-host.">
+  <meta property="og:image" content="https://venta.gg/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Venta - chat and voice you can host yourself">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Venta - chat and voice you can host yourself">
+  <meta name="twitter:description"
+        content="Chat, voice and video for communities. End-to-end encrypted with MLS, open to federation, and yours to self-host.">
+  <meta name="twitter:image" content="https://venta.gg/og.png">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Venta",
+      "applicationCategory": "CommunicationApplication",
+      "operatingSystem": "Windows, Linux",
+      "url": "https://venta.gg/",
+      "downloadUrl": "https://venta.gg/#download",
+      "description": "Chat, voice and video for communities. End-to-end encrypted with MLS, open to federation, and yours to self-host.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CHF"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "AlpineBits KLG",
+        "url": "https://venta.gg/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Boniswil",
+          "addressCountry": "CH"
+        }
+      }
+    }
+  </script>
 </head>
 <body>
   <app-root></app-root>

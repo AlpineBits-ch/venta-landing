@@ -5,10 +5,10 @@ import { RouterLink } from '@angular/router';
   selector: 'app-impressum',
   imports: [RouterLink],
   template: `
-    <section class="pt-40 pb-20 px-4 min-h-screen">
+    <section class="px-5 pb-24 pt-32 sm:px-8 sm:pt-40">
       <div class="max-w-3xl mx-auto">
-        <div class="bg-white/90 backdrop-blur-md rounded-2xl p-8 sm:p-12 shadow-lg legal-prose">
-          <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Imprint</h1>
+        <div class="rounded-2xl border border-line bg-card p-7 sm:p-10 prose-dark">
+          <h1 class="display text-3xl text-text sm:text-4xl mb-4">Imprint</h1>
 
           <h2>Company</h2>
           <address>
