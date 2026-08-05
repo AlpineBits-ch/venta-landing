@@ -1,12 +1,13 @@
 <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-ink text-text">
 
-  <!-- One ambient light source, anchored behind the hero. The old page put a
-       gradient on every surface; here the glow is the only atmosphere and
-       everything below it sits on flat ink. -->
-  <div class="pointer-events-none absolute inset-x-0 top-0 h-[720px] overflow-hidden" aria-hidden="true">
-    <div class="absolute left-1/2 top-[-380px] h-[760px] w-[1200px] -translate-x-1/2 rounded-full opacity-[0.16]"
+  <!-- One ambient light source, sized in rem so it grows with the page rather
+       than staying put while the content around it scales. It carries no
+       hairline of its own: this element is on every route, so any divider here
+       is a fixed distance from the top of a page whose content it knows
+       nothing about. Sections draw their own borders. -->
+  <div class="pointer-events-none absolute inset-x-0 top-0 h-[45rem] overflow-hidden" aria-hidden="true">
+    <div class="absolute left-1/2 top-[-23.75rem] h-[47.5rem] w-[75rem] -translate-x-1/2 rounded-full opacity-[0.16]"
          style="background: radial-gradient(closest-side, #4b5bc4, transparent 70%)"></div>
-    <div class="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-line to-transparent opacity-60"></div>
   </div>
 
   <app-header />

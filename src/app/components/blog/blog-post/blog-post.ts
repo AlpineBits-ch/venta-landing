@@ -23,7 +23,7 @@ import { DISCORD_INVITE } from '../../../site-links';
         @if (post(); as entry) {
           <article class="mt-10">
             <div class="flex flex-wrap items-center gap-3">
-              <span class="rounded border border-line px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-faint">
+              <span class="rounded border border-line px-1.5 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-faint">
                 {{ entry.category }}
               </span>
               <span class="font-mono text-xs text-faint">{{ entry.date }}</span>

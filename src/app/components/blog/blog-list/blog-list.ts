@@ -13,11 +13,11 @@ import { IconComponent } from '../../ui/icon';
       <div class="mx-auto max-w-3xl">
 
         <div class="max-w-2xl">
-          <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-faint">Blog</p>
+          <p class="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-faint">Blog</p>
           <h1 class="display mt-4 text-[2.25rem] text-text sm:text-[3rem]">
             What we changed, and why.
           </h1>
-          <p class="mt-5 text-[17px] leading-relaxed text-muted">
+          <p class="mt-5 text-[1.0625rem] leading-relaxed text-muted">
             Release notes, decisions, and the reasoning behind them.
           </p>
         </div>
@@ -27,7 +27,7 @@ import { IconComponent } from '../../ui/icon';
             <a [routerLink]="['/blog', post.slug]"
                class="group border-t border-line-soft py-8 transition-colors last:border-b hover:bg-card/40">
               <div class="flex flex-wrap items-center gap-3">
-                <span class="rounded border border-line px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-faint">
+                <span class="rounded border border-line px-1.5 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-faint">
                   {{ post.category }}
                 </span>
                 <span class="font-mono text-xs text-faint">{{ post.date }}</span>
@@ -39,7 +39,7 @@ import { IconComponent } from '../../ui/icon';
               <p class="mt-2 leading-relaxed text-muted">{{ post.summary }}</p>
 
               <div class="mt-4 flex items-center gap-2.5">
-                <span class="flex h-6 w-6 items-center justify-center rounded-full border border-line bg-card font-mono text-[11px] text-muted">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full border border-line bg-card font-mono text-[0.6875rem] text-muted">
                   {{ post.author[0] }}
                 </span>
                 <span class="text-sm text-muted">{{ post.author }}</span>

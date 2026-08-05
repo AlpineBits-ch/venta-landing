@@ -67,10 +67,10 @@ const CAST: MockMessage[] = [
 
         <!-- Guild rail. The mark is a file so it swaps with the brand. -->
         <div class="hidden w-[3.25rem] shrink-0 flex-col items-center gap-2 border-r border-line-soft bg-ink py-3 sm:flex">
-          <img src="logo-mark.svg" alt="" width="26" height="26" class="h-[26px] w-[26px]">
+          <img src="logo-mark.svg" alt="" width="26" height="26" class="h-[1.625rem] w-[1.625rem]">
           <div class="my-1 h-px w-6 bg-line"></div>
           @for (g of guilds; track g.id) {
-            <span class="relative flex h-8 w-8 items-center justify-center rounded-[10px] text-[11px] font-bold text-white"
+            <span class="relative flex h-8 w-8 items-center justify-center rounded-[0.625rem] text-[0.6875rem] font-bold text-white"
                   [class]="g.tint">
               @if (g.active) {
                 <span class="absolute -left-3 h-5 w-[3px] rounded-r bg-text"></span>
@@ -83,22 +83,22 @@ const CAST: MockMessage[] = [
         <!-- Channel list -->
         <div class="hidden w-[10.5rem] shrink-0 flex-col border-r border-line-soft bg-sidebar md:flex">
           <div class="flex h-9 items-center justify-between border-b border-line-soft px-3">
-            <span class="truncate text-[12px] font-bold text-text">Ridgeline</span>
+            <span class="truncate text-[0.75rem] font-bold text-text">Ridgeline</span>
             <app-icon name="chevronDown" class="h-3 w-3 text-faint" />
           </div>
 
           <div class="flex items-center gap-2 px-3 py-2">
             <app-icon name="book" class="h-3.5 w-3.5 text-muted" />
-            <span class="text-[12px] font-semibold text-muted">Wiki</span>
+            <span class="text-[0.75rem] font-semibold text-muted">Wiki</span>
           </div>
 
           <div class="flex flex-col gap-px overflow-hidden px-1.5">
             @for (group of channels; track group.label) {
-              <p class="mt-2 px-1.5 font-mono text-[9px] uppercase tracking-[0.14em] text-faint">
+              <p class="mt-2 px-1.5 font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-faint">
                 {{ group.label }}
               </p>
               @for (c of group.items; track c.name) {
-                <span class="flex items-center gap-1.5 rounded-md px-1.5 py-1 text-[12px]"
+                <span class="flex items-center gap-1.5 rounded-md px-1.5 py-1 text-[0.75rem]"
                       [class]="c.active ? 'bg-raised text-text' : 'text-muted'">
                   <app-icon [name]="c.voice ? 'mic' : 'message'" class="h-3 w-3 opacity-60" />
                   <span class="truncate">{{ c.name }}</span>
@@ -112,22 +112,22 @@ const CAST: MockMessage[] = [
         <div class="flex min-w-0 flex-1 flex-col">
           <div class="flex h-9 shrink-0 items-center gap-2 border-b border-line-soft px-4">
             <app-icon name="message" class="h-3.5 w-3.5 text-faint" />
-            <span class="text-[12px] font-semibold text-text">general-chat</span>
+            <span class="text-[0.75rem] font-semibold text-text">general-chat</span>
           </div>
 
           <div class="flex flex-1 flex-col justify-end gap-3.5 overflow-hidden px-4 py-4">
             @for (m of cast; track m.who) {
               <div class="flex gap-2.5">
-                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold text-white"
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[0.6875rem] font-semibold text-white"
                       [class]="m.tint">
                   {{ m.initial }}
                 </span>
                 <div class="min-w-0">
                   <p class="flex items-baseline gap-2">
-                    <span class="text-[12.5px] font-semibold text-text">{{ m.who }}</span>
-                    <span class="font-mono text-[10px] text-faint">{{ m.time }}</span>
+                    <span class="text-[0.78125rem] font-semibold text-text">{{ m.who }}</span>
+                    <span class="font-mono text-[0.625rem] text-faint">{{ m.time }}</span>
                   </p>
-                  <p class="mt-0.5 text-[12.5px] leading-snug text-muted">{{ m.body }}</p>
+                  <p class="mt-0.5 text-[0.78125rem] leading-snug text-muted">{{ m.body }}</p>
                 </div>
               </div>
             }
@@ -135,7 +135,7 @@ const CAST: MockMessage[] = [
 
           <div class="shrink-0 px-4 pb-4">
             <div class="flex items-center gap-2 rounded-lg border border-line bg-card px-3 py-2">
-              <span class="text-[12.5px] text-faint">Message #general-chat</span>
+              <span class="text-[0.78125rem] text-faint">Message #general-chat</span>
               <span class="ml-auto h-3.5 w-px bg-line"></span>
             </div>
           </div>
@@ -189,10 +189,10 @@ export class MockGuildComponent {
       <div class="flex flex-1 flex-col gap-3 p-6">
         <div class="flex items-center gap-2">
           <app-icon name="book" class="h-4 w-4 text-brand-dim" />
-          <span class="font-mono text-[10px] uppercase tracking-[0.16em] text-faint">Wiki</span>
+          <span class="font-mono text-[0.625rem] uppercase tracking-[0.16em] text-faint">Wiki</span>
         </div>
 
-        <h3 class="text-[15px] font-semibold text-text">Tuesday raid - comp and rotations</h3>
+        <h3 class="text-[0.9375rem] font-semibold text-text">Tuesday raid - comp and rotations</h3>
 
         <div class="flex flex-col gap-1.5">
           @for (line of lines; track line.w) {
@@ -201,15 +201,15 @@ export class MockGuildComponent {
         </div>
 
         <div class="mt-1 rounded-lg border border-line bg-card p-3">
-          <p class="font-mono text-[10px] uppercase tracking-[0.14em] text-faint">Builds</p>
+          <p class="font-mono text-[0.625rem] uppercase tracking-[0.14em] text-faint">Builds</p>
           <div class="mt-2 flex flex-col gap-1.5">
             <span class="h-1.5 w-3/4 rounded-full bg-line"></span>
             <span class="h-1.5 w-1/2 rounded-full bg-line"></span>
           </div>
         </div>
 
-        <p class="mt-auto flex items-center gap-2 pt-2 text-[11px] text-faint">
-          <span class="flex h-4 w-4 items-center justify-center rounded-full bg-brand text-[8px] font-bold text-white">A</span>
+        <p class="mt-auto flex items-center gap-2 pt-2 text-[0.6875rem] text-faint">
+          <span class="flex h-4 w-4 items-center justify-center rounded-full bg-brand text-[0.5rem] font-bold text-white">A</span>
           Edited by Ash Ferrier
         </p>
       </div>
@@ -233,22 +233,22 @@ export class MockWikiComponent {
       <div class="flex flex-1 flex-col gap-4 p-6">
         <div class="flex items-center gap-2">
           <app-icon name="mic" class="h-4 w-4 text-online" />
-          <span class="font-mono text-[10px] uppercase tracking-[0.16em] text-faint">Voice &middot; Squad one</span>
-          <span class="ml-auto font-mono text-[10px] text-online">Connected</span>
+          <span class="font-mono text-[0.625rem] uppercase tracking-[0.16em] text-faint">Voice &middot; Squad one</span>
+          <span class="ml-auto font-mono text-[0.625rem] text-online">Connected</span>
         </div>
 
         <div class="grid grid-cols-2 gap-2.5">
           @for (p of people; track p.name) {
             <div class="flex items-center gap-2.5 rounded-lg border p-2.5"
                  [class]="p.speaking ? 'border-online/40 bg-online/5' : 'border-line bg-card'">
-              <span class="relative flex h-8 w-8 items-center justify-center rounded-full text-[11px] font-semibold text-white"
+              <span class="relative flex h-8 w-8 items-center justify-center rounded-full text-[0.6875rem] font-semibold text-white"
                     [class]="p.tint">
                 {{ p.initial }}
                 @if (p.speaking) {
                   <span class="speaking-ring absolute inset-0 rounded-full ring-2 ring-online"></span>
                 }
               </span>
-              <span class="min-w-0 flex-1 truncate text-[12.5px] text-text">{{ p.name }}</span>
+              <span class="min-w-0 flex-1 truncate text-[0.78125rem] text-text">{{ p.name }}</span>
               @if (p.muted) {
                 <app-icon name="micOff" class="h-3.5 w-3.5 text-offline" />
               } @else if (p.sharing) {
@@ -260,7 +260,7 @@ export class MockWikiComponent {
 
         <div class="mt-auto flex items-center gap-2 rounded-lg border border-line bg-card px-3 py-2">
           <app-icon name="screenShare" class="h-3.5 w-3.5 text-brand-dim" />
-          <span class="text-[12px] text-muted">Rowan is sharing a screen</span>
+          <span class="text-[0.75rem] text-muted">Rowan is sharing a screen</span>
         </div>
       </div>
       <figcaption class="border-t border-line-soft px-5 py-3 text-sm text-muted">

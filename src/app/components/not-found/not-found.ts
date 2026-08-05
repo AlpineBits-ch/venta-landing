@@ -13,7 +13,7 @@ import { SUPPORT_URL } from '../../site-links';
         <!-- Placeholder mark: always referenced as a file, never inlined, so
              the real one drops in by replacing public/logo-mark.svg alone. -->
         <img src="logo-mark.svg" alt="" width="40" height="40" class="mb-6 h-10 w-10 opacity-80">
-        <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-faint">404</p>
+        <p class="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-faint">404</p>
         <h1 class="display mt-4 text-[2rem] text-text sm:text-[2.75rem]">
           There is nothing at this address.
         </h1>
@@ -23,20 +23,20 @@ import { SUPPORT_URL } from '../../site-links';
 
         <div class="mt-8 flex flex-col divide-y divide-line-soft border-y border-line-soft">
           <a routerLink="/home" class="group flex items-center gap-3 py-4 transition-colors hover:text-text">
-            <span class="text-[15px] text-muted transition-colors group-hover:text-text">Home and downloads</span>
+            <span class="text-[0.9375rem] text-muted transition-colors group-hover:text-text">Home and downloads</span>
             <app-icon name="arrowRight" class="ml-auto h-4 w-4 text-faint transition-transform group-hover:translate-x-0.5" />
           </a>
           <a routerLink="/roadmap" class="group flex items-center gap-3 py-4 transition-colors hover:text-text">
-            <span class="text-[15px] text-muted transition-colors group-hover:text-text">Roadmap</span>
+            <span class="text-[0.9375rem] text-muted transition-colors group-hover:text-text">Roadmap</span>
             <app-icon name="arrowRight" class="ml-auto h-4 w-4 text-faint transition-transform group-hover:translate-x-0.5" />
           </a>
           <a routerLink="/blog" class="group flex items-center gap-3 py-4 transition-colors hover:text-text">
-            <span class="text-[15px] text-muted transition-colors group-hover:text-text">Blog</span>
+            <span class="text-[0.9375rem] text-muted transition-colors group-hover:text-text">Blog</span>
             <app-icon name="arrowRight" class="ml-auto h-4 w-4 text-faint transition-transform group-hover:translate-x-0.5" />
           </a>
           <a [href]="support" target="_blank" rel="noopener noreferrer"
              class="group flex items-center gap-3 py-4 transition-colors hover:text-text">
-            <span class="text-[15px] text-muted transition-colors group-hover:text-text">Support</span>
+            <span class="text-[0.9375rem] text-muted transition-colors group-hover:text-text">Support</span>
             <app-icon name="externalLink" class="ml-auto h-4 w-4 text-faint" />
           </a>
         </div>

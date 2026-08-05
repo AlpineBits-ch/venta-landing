@@ -41,6 +41,12 @@
 /* ── Base ────────────────────────────────────────────────────────────── */
 
 html {
+  /* One dial for the whole page. Tailwind sizes type AND spacing in rem, and
+     every hard-coded size in this project is written in rem for the same
+     reason, so this scales the site as a unit rather than just the text.
+     Change this number to make everything bigger or smaller. */
+  font-size: 115%;
+
   scroll-behavior: smooth;
   /* The header is fixed; anchor targets need to clear it. */
   scroll-padding-top: 6rem;
