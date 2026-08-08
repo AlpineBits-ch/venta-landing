@@ -1,4 +1,7 @@
-<a href="#main"
+<!-- Handled in code, not by the href: a bare fragment resolves against
+     `<base href="/">` and would navigate off the current route entirely. The
+     handler also moves focus, which is the half of a skip link that matters. -->
+<a href="#main" (click)="skipToMain($event)"
    class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">
   Skip to content
 </a>
@@ -16,7 +19,11 @@
     </a>
 
     <nav class="ml-auto hidden items-center gap-7 lg:flex">
-      <a href="#self-hosting" class="text-sm text-muted transition-colors hover:text-text">Self-hosting</a>
+      <a routerLink="/home" fragment="self-hosting" class="text-sm text-muted transition-colors hover:text-text">Self-hosting</a>
+      <a routerLink="/home" fragment="ios" class="flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-text">
+        <app-icon name="apple" class="h-3.5 w-3.5" />
+        iOS beta
+      </a>
       <a routerLink="/roadmap" class="text-sm text-muted transition-colors hover:text-text">Roadmap</a>
       <a routerLink="/blog" class="text-sm text-muted transition-colors hover:text-text">Blog</a>
       <a [href]="docs" target="_blank" rel="noopener noreferrer"
@@ -35,7 +42,7 @@
         <app-icon name="discord" class="h-[1.125rem] w-[1.125rem]" />
       </a>
 
-      <a href="#download"
+      <a routerLink="/home" fragment="download"
          class="ml-1 rounded-lg bg-brand px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-hover">
         Download
       </a>
@@ -54,8 +61,12 @@
   @if (menuOpen()) {
     <nav id="mobile-nav" class="border-t border-line-soft bg-ink/95 backdrop-blur-xl lg:hidden">
       <div class="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-8">
-        <a href="#self-hosting" (click)="closeMenu()"
+        <a routerLink="/home" fragment="self-hosting" (click)="closeMenu()"
            class="border-b border-line-soft py-3 text-[0.9375rem] text-muted transition-colors hover:text-text">Self-hosting</a>
+        <a routerLink="/home" fragment="ios" (click)="closeMenu()"
+           class="flex items-center gap-2 border-b border-line-soft py-3 text-[0.9375rem] text-muted transition-colors hover:text-text">
+          <app-icon name="apple" class="h-3.5 w-3.5" /> iOS beta
+        </a>
         <a routerLink="/roadmap" (click)="closeMenu()"
            class="border-b border-line-soft py-3 text-[0.9375rem] text-muted transition-colors hover:text-text">Roadmap</a>
         <a routerLink="/blog" (click)="closeMenu()"

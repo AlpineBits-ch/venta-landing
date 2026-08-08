@@ -20,6 +20,7 @@ import {
   GITHUB_URL,
   STATUS_URL,
   SUPPORT_URL,
+  TESTFLIGHT_URL,
 } from '../../site-links';
 
 interface Feature {
@@ -48,6 +49,7 @@ export class Home implements OnInit {
   protected readonly docs = DOCS_URL;
   protected readonly support = SUPPORT_URL;
   protected readonly status = STATUS_URL;
+  protected readonly testflight = TESTFLIGHT_URL;
   protected readonly downloads = DOWNLOADS;
 
   // ── Download control ────────────────────────────────────────────────────
@@ -300,6 +302,22 @@ export class Home implements OnInit {
     },
   ];
 
+  /** Written so nobody arrives at TestFlight expecting an install to be waiting. */
+  protected readonly testflightSteps = [
+    {
+      title: 'Open the invite on your iPhone',
+      detail: 'The link installs TestFlight if you do not have it, then adds Venta to your tester list.',
+    },
+    {
+      title: 'Wait for the first build',
+      detail: 'Testers are being collected now. Apple notifies you the moment a build is released to the group.',
+    },
+    {
+      title: 'Install and tell us what breaks',
+      detail: 'Feedback goes straight from TestFlight, or into the beta channel on Discord if you would rather talk.',
+    },
+  ];
+
   protected readonly faq = [
     {
       q: 'What does it cost?',
@@ -319,7 +337,7 @@ export class Home implements OnInit {
     },
     {
       q: 'Is there a mobile app?',
-      a: 'A native mobile app is in internal testing now. Today the client runs on Windows and Linux.',
+      a: 'A native iPhone app is going out through TestFlight, and you can join the beta now - the first build is close, not live. Android follows. Today the shipping client runs on Windows and Linux.',
     },
     {
       q: 'How finished is it?',

@@ -168,7 +168,8 @@ export class RoadmapService {
     {
       id: 'mobile-native',
       title: 'Native mobile app',
-      description: 'A native client for phones, currently in internal testing.',
+      description:
+        'The iPhone client is heading into a public TestFlight beta - the invite is open, the first build is close. Android follows.',
       status: 'in-progress',
       category: 'Mobile',
     },

@@ -16,6 +16,16 @@ export const DONATE_URL = 'https://donate.stripe.com/cNi00k5F7eNdgXwcxjeZ200';
 export const CONTACT_EMAIL = 'dominic@alpinebits.ch';
 
 /**
+ * The iOS beta.
+ *
+ * TestFlight, not the App Store - the public invite link accepts testers before
+ * a build is live, so the page can send people here while the first build is
+ * still on its way. Copy around this link must not promise an App Store listing
+ * or an installable build today.
+ */
+export const TESTFLIGHT_URL = 'https://testflight.apple.com/join/WeGjjCPj';
+
+/**
  * Release downloads.
  *
  * These are the only three targets the update API serves - macOS, Android and

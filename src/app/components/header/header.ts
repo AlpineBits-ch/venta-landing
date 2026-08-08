@@ -18,6 +18,25 @@ export class Header {
   protected readonly docs = DOCS_URL;
   protected readonly support = SUPPORT_URL;
 
+  /**
+   * The skip link, done by hand.
+   *
+   * The native jump is unusable here: `<base href="/">` makes href="#main"
+   * resolve to "/#main", so the browser leaves whatever route the visitor is on
+   * and the router redirects them to the home page. Focus is moved as well as
+   * scrolled, because a skip link that only scrolls leaves the keyboard where it
+   * was and skips nothing.
+   */
+  protected skipToMain(event: Event): void {
+    const main = document.getElementById('main');
+    if (!main) return;
+
+    event.preventDefault();
+    main.setAttribute('tabindex', '-1');
+    main.focus({ preventScroll: true });
+    main.scrollIntoView();
+  }
+
   protected toggleMenu(): void {
     this.menuOpen.update((open) => !open);
   }
