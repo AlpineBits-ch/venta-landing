@@ -184,7 +184,7 @@ export class RoadmapService {
       id: 'sound-design',
       title: 'New sound design',
       description: 'Every alert, join and notification sound rebuilt by an audio designer who does this properly.',
-      status: 'in-progress',
+      status: 'done',
       category: 'Core',
     },
     {
@@ -200,14 +200,14 @@ export class RoadmapService {
       id: 'web-platform',
       title: 'Web client',
       description: 'Venta in a browser tab, with no install at all.',
-      status: 'planned',
+      status: 'in-progress',
       category: 'Platform',
     },
     {
       id: 'public-api',
       title: 'Public API for integrations',
       description: 'A documented surface for building your own clients and automation.',
-      status: 'planned',
+      status: 'in-progress',
       category: 'Platform',
     },
 
