@@ -42,6 +42,14 @@
         <app-icon name="discord" class="h-[1.125rem] w-[1.125rem]" />
       </a>
 
+      <!-- Ghost, like the icon buttons beside it. The header keeps exactly one
+           filled button; a second outlined one next to Download just fights it. -->
+      <a [href]="webApp" target="_blank" rel="noopener noreferrer"
+         class="hidden items-center gap-2 rounded-lg px-2.5 py-2 text-sm font-medium text-muted transition-colors hover:bg-raised hover:text-text sm:inline-flex">
+        <app-icon name="browser" class="h-4 w-4" />
+        Open app
+      </a>
+
       <a routerLink="/home" fragment="download"
          class="ml-1 rounded-lg bg-brand px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-hover">
         Download
@@ -61,6 +69,20 @@
   @if (menuOpen()) {
     <nav id="mobile-nav" class="border-t border-line-soft bg-ink/95 backdrop-blur-xl lg:hidden">
       <div class="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-8">
+        <!-- On a phone this is the only way in that works right now, so it
+             leads the panel rather than sitting with the social links. -->
+        <a [href]="webApp" target="_blank" rel="noopener noreferrer" (click)="closeMenu()"
+           class="mt-1 mb-3 flex items-center gap-3 rounded-xl border border-line bg-card px-4 py-3 transition-colors hover:border-brand/50 hover:bg-raised">
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-surface text-brand-dim">
+            <app-icon name="browser" class="h-[1.125rem] w-[1.125rem]" />
+          </span>
+          <span class="min-w-0 flex-1">
+            <span class="block text-[0.9375rem] font-semibold text-text">Open the web app</span>
+            <span class="block font-mono text-xs text-faint">app.venta.gg</span>
+          </span>
+          <app-icon name="arrowRight" class="h-4 w-4 text-muted" />
+        </a>
+
         <a routerLink="/home" fragment="self-hosting" (click)="closeMenu()"
            class="border-b border-line-soft py-3 text-[0.9375rem] text-muted transition-colors hover:text-text">Self-hosting</a>
         <a routerLink="/home" fragment="ios" (click)="closeMenu()"

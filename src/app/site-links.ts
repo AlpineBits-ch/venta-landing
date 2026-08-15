@@ -16,6 +16,17 @@ export const DONATE_URL = 'https://donate.stripe.com/cNi00k5F7eNdgXwcxjeZ200';
 export const CONTACT_EMAIL = 'dominic@alpinebits.ch';
 
 /**
+ * The web client.
+ *
+ * The same client as the download, built for the browser, signing in against
+ * the same instances. It is a real way in, not a demo - but the desktop build
+ * keeps the things a browser tab cannot do (global push-to-talk hotkeys,
+ * hardware-encoded screen sharing, rich presence), so copy around this link
+ * offers it as the no-install option rather than as the better one.
+ */
+export const WEB_APP_URL = 'https://app.venta.gg';
+
+/**
  * The iOS beta.
  *
  * TestFlight, not the App Store - the public invite link accepts testers before

@@ -1,7 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IconComponent } from '../ui/icon';
-import { DISCORD_INVITE, DOCS_URL, DONATE_URL, GITHUB_URL, STATUS_URL, SUPPORT_URL } from '../../site-links';
+import {
+  DISCORD_INVITE,
+  DOCS_URL,
+  DONATE_URL,
+  GITHUB_URL,
+  STATUS_URL,
+  SUPPORT_URL,
+  WEB_APP_URL,
+} from '../../site-links';
 
 @Component({
   selector: 'app-footer',
@@ -18,4 +26,5 @@ export class Footer {
   protected readonly support = SUPPORT_URL;
   protected readonly status = STATUS_URL;
   protected readonly donate = DONATE_URL;
+  protected readonly webApp = WEB_APP_URL;
 }

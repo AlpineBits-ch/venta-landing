@@ -10,7 +10,12 @@ import {
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IconComponent } from '../ui/icon';
-import { MockGuildComponent, MockVoiceComponent, MockWikiComponent } from '../ui/product-mock';
+import {
+  MockGuildComponent,
+  MockVoiceComponent,
+  MockWebComponent,
+  MockWikiComponent,
+} from '../ui/product-mock';
 import {
   BACKEND_REPO_URL,
   DISCORD_INVITE,
@@ -21,6 +26,7 @@ import {
   STATUS_URL,
   SUPPORT_URL,
   TESTFLIGHT_URL,
+  WEB_APP_URL,
 } from '../../site-links';
 
 interface Feature {
@@ -37,7 +43,14 @@ interface FeatureGroup {
 @Component({
   selector: 'app-home',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, IconComponent, MockGuildComponent, MockWikiComponent, MockVoiceComponent],
+  imports: [
+    RouterLink,
+    IconComponent,
+    MockGuildComponent,
+    MockWikiComponent,
+    MockVoiceComponent,
+    MockWebComponent,
+  ],
   templateUrl: './home.html',
 })
 export class Home implements OnInit {
@@ -50,7 +63,15 @@ export class Home implements OnInit {
   protected readonly support = SUPPORT_URL;
   protected readonly status = STATUS_URL;
   protected readonly testflight = TESTFLIGHT_URL;
+  protected readonly webApp = WEB_APP_URL;
   protected readonly downloads = DOWNLOADS;
+
+  /** What you give up by staying in a tab. Named, so nobody finds out later. */
+  protected readonly desktopOnly = [
+    'Global push-to-talk',
+    'Hardware-encoded screen share',
+    'Rich presence from your games',
+  ];
 
   // ── Download control ────────────────────────────────────────────────────
 
@@ -334,6 +355,10 @@ export class Home implements OnInit {
     {
       q: 'Can I move my community over?',
       a: 'There is a Discord import that brings a server across, and guild templates if you would rather start clean.',
+    },
+    {
+      q: 'Do I have to install anything?',
+      a: 'No. app.venta.gg runs the same client in a browser tab, against the same instances, with the same account. The desktop build is worth having for global push-to-talk, hardware-encoded screen sharing and rich presence, but nothing else is missing from the tab.',
     },
     {
       q: 'Is there a mobile app?',

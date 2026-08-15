@@ -95,7 +95,15 @@
         </a>
       </div>
 
+      <!-- The third way in, at third-way-in weight: a line of text where the
+           address itself is the link, because the address is the product. -->
       <p class="mt-5 text-[0.8125rem] text-faint">
+        Prefer a tab? The same client runs at
+        <a [href]="webApp" target="_blank" rel="noopener noreferrer"
+           class="font-mono text-brand-dim underline decoration-brand-dim/40 underline-offset-4 transition-colors hover:decoration-brand-dim">app.venta.gg</a>.
+      </p>
+
+      <p class="mt-2 text-[0.8125rem] text-faint">
         In active beta - things break, and we fix them fast.
         <a [href]="status" target="_blank" rel="noopener noreferrer"
            class="text-muted underline decoration-line underline-offset-4 transition-colors hover:text-text">
@@ -322,7 +330,45 @@
       }
     </div>
 
-    <div class="mt-6 flex flex-col gap-3 rounded-xl border border-line-soft bg-surface/60 p-5 sm:flex-row sm:items-center sm:justify-between">
+    <!-- The no-install route. It gets a panel rather than a fourth card because
+         it is not a download, and the window chrome is the part that explains
+         itself faster than any sentence would. -->
+    <div class="mt-4 grid items-center gap-10 rounded-2xl border border-line bg-card p-6 sm:p-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] lg:gap-12">
+      <div>
+        <p class="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-faint">Nothing to install</p>
+        <h3 class="display mt-3 text-2xl text-text sm:text-[1.75rem]">Or just open it in a tab.</h3>
+        <p class="mt-4 leading-relaxed text-muted">
+          The web client is the same client, signing in against the same instances - ours or your own.
+          Guilds, calls, encryption, all of it, on any machine you happen to be sitting at.
+        </p>
+
+        <div class="mt-6 border-t border-line-soft pt-5">
+          <p class="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-faint">
+            The desktop build keeps
+          </p>
+          <ul class="mt-3 flex flex-col gap-2">
+            @for (item of desktopOnly; track item) {
+              <li class="flex items-center gap-2.5 text-sm text-muted">
+                <app-icon name="check" class="h-3.5 w-3.5 text-brand-dim" />
+                {{ item }}
+              </li>
+            }
+          </ul>
+          <p class="mt-3 text-[0.8125rem] text-faint">Everything else is in the browser.</p>
+        </div>
+
+        <a [href]="webApp" target="_blank" rel="noopener noreferrer"
+           class="group mt-7 inline-flex items-center gap-2.5 rounded-xl bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-hover">
+          <app-icon name="browser" class="h-4 w-4" />
+          Open app.venta.gg
+          <app-icon name="arrowRight" class="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+        </a>
+      </div>
+
+      <app-mock-web />
+    </div>
+
+    <div class="mt-4 flex flex-col gap-3 rounded-xl border border-line-soft bg-surface/60 p-5 sm:flex-row sm:items-center sm:justify-between">
       <p class="text-sm text-muted">
         <span class="font-medium text-text">Phones are next.</span>
         The iPhone app goes out through TestFlight, and you can put your name down now.

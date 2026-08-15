@@ -75,6 +75,17 @@ const ICONS: Record<string, IconDef> = {
   cloud: {
     paths: ['M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.2 9.5 4.25 4.25 0 0 0 7 19h10.5Z'],
   },
+  /* The web client. A window with its chrome, not a globe - the point is that
+     it is the app in a tab, and a globe already means "language" elsewhere. */
+  browser: {
+    paths: [
+      'M20 3H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z',
+      'M2 8h20',
+      'M5.2 5.5h.01',
+      'M8 5.5h.01',
+      'M10.8 5.5h.01',
+    ],
+  },
   federation: {
     paths: ['M12 2a15 15 0 0 1 0 20', 'M12 2a15 15 0 0 0 0 20', 'M2.5 9h19', 'M2.5 15h19'],
     circles: [{ cx: 12, cy: 12, r: 10 }],

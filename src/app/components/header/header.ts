@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostListener, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IconComponent } from '../ui/icon';
-import { DISCORD_INVITE, DOCS_URL, GITHUB_URL, SUPPORT_URL } from '../../site-links';
+import { DISCORD_INVITE, DOCS_URL, GITHUB_URL, SUPPORT_URL, WEB_APP_URL } from '../../site-links';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +17,7 @@ export class Header {
   protected readonly github = GITHUB_URL;
   protected readonly docs = DOCS_URL;
   protected readonly support = SUPPORT_URL;
+  protected readonly webApp = WEB_APP_URL;
 
   /**
    * The skip link, done by hand.

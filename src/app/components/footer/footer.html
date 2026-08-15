@@ -27,6 +27,10 @@
         <h2 class="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-faint">Product</h2>
         <ul class="mt-4 flex flex-col gap-2.5">
           <li><a routerLink="/home" fragment="download" class="text-sm text-muted transition-colors hover:text-text">Download</a></li>
+          <li>
+            <a [href]="webApp" target="_blank" rel="noopener noreferrer"
+               class="text-sm text-muted transition-colors hover:text-text">Web app</a>
+          </li>
           <li><a routerLink="/home" fragment="ios" class="text-sm text-muted transition-colors hover:text-text">iOS beta</a></li>
           <li><a routerLink="/home" fragment="self-hosting" class="text-sm text-muted transition-colors hover:text-text">Self-hosting</a></li>
           <li><a routerLink="/roadmap" class="text-sm text-muted transition-colors hover:text-text">Roadmap</a></li>

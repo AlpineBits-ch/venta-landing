@@ -180,6 +180,122 @@ export class MockGuildComponent {
   ];
 }
 
+/**
+ * The same client, framed by the thing that makes it the web client.
+ *
+ * The window chrome is the whole argument here, so it is drawn properly - dots,
+ * an address bar, a padlock - and the app inside is deliberately the same scene
+ * as the hero mock at a smaller scale. Nothing about the app changes in a tab,
+ * and showing a different app inside the window would say the opposite.
+ *
+ * The chrome is neutral rather than any one browser's: traffic lights in the
+ * page's own line colour, not red/amber/green, because this runs in whatever
+ * browser the visitor already has open.
+ */
+@Component({
+  selector: 'app-mock-web',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [IconComponent],
+  template: `
+    <div class="overflow-hidden rounded-xl border border-line bg-surface shadow-2xl shadow-black/60"
+         role="img"
+         aria-label="The Venta client running in a browser tab at app.venta.gg.">
+
+      <!-- Window chrome -->
+      <div class="flex h-10 items-center gap-3 border-b border-line-soft bg-card px-3.5">
+        <div class="flex shrink-0 gap-1.5">
+          @for (dot of [1, 2, 3]; track dot) {
+            <span class="h-2.5 w-2.5 rounded-full bg-line"></span>
+          }
+        </div>
+        <div class="flex min-w-0 flex-1 items-center gap-2 rounded-md border border-line-soft bg-ink px-2.5 py-1">
+          <app-icon name="lock" class="h-3 w-3 shrink-0 text-faint" [strokeWidth]="2" />
+          <span class="truncate font-mono text-[0.6875rem] text-muted">
+            app.venta.gg
+          </span>
+        </div>
+      </div>
+
+      <!-- The app, same scene as the hero, smaller -->
+      <div class="flex h-[13.5rem] sm:h-[15rem]">
+        <div class="hidden w-11 shrink-0 flex-col items-center gap-1.5 border-r border-line-soft bg-ink py-2.5 sm:flex">
+          <img src="logo-mark.svg" alt="" width="22" height="22" class="h-[1.375rem] w-[1.375rem]">
+          <div class="my-0.5 h-px w-5 bg-line"></div>
+          @for (g of guilds; track g.id) {
+            <span class="relative flex h-7 w-7 items-center justify-center rounded-lg text-[0.625rem] font-bold text-white"
+                  [class]="g.tint">
+              @if (g.active) {
+                <span class="absolute -left-2.5 h-4 w-[3px] rounded-r bg-text"></span>
+              }
+              {{ g.id }}
+            </span>
+          }
+        </div>
+
+        <div class="hidden w-32 shrink-0 flex-col gap-px border-r border-line-soft bg-sidebar px-1.5 py-2 md:flex">
+          <span class="px-1.5 pb-1 text-[0.6875rem] font-bold text-text">Ridgeline</span>
+          @for (c of channels; track c.name) {
+            <span class="flex items-center gap-1.5 rounded px-1.5 py-1 text-[0.6875rem]"
+                  [class]="c.active ? 'bg-raised text-text' : 'text-muted'">
+              <app-icon [name]="c.voice ? 'mic' : 'message'" class="h-2.5 w-2.5 opacity-60" />
+              <span class="truncate">{{ c.name }}</span>
+            </span>
+          }
+        </div>
+
+        <div class="flex min-w-0 flex-1 flex-col">
+          <div class="flex h-8 shrink-0 items-center gap-2 border-b border-line-soft px-3.5">
+            <app-icon name="message" class="h-3 w-3 text-faint" />
+            <span class="text-[0.6875rem] font-semibold text-text">general-chat</span>
+          </div>
+
+          <div class="flex flex-1 flex-col justify-end gap-3 overflow-hidden px-3.5 py-3">
+            @for (m of cast; track m.who) {
+              <div class="flex gap-2">
+                <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[0.625rem] font-semibold text-white"
+                      [class]="m.tint">
+                  {{ m.initial }}
+                </span>
+                <div class="min-w-0">
+                  <p class="flex items-baseline gap-1.5">
+                    <span class="text-[0.6875rem] font-semibold text-text">{{ m.who }}</span>
+                    <span class="font-mono text-[0.5625rem] text-faint">{{ m.time }}</span>
+                  </p>
+                  <p class="mt-0.5 text-[0.6875rem] leading-snug text-muted">{{ m.body }}</p>
+                </div>
+              </div>
+            }
+          </div>
+
+          <div class="shrink-0 px-3.5 pb-3">
+            <div class="flex items-center rounded-md border border-line bg-card px-2.5 py-1.5">
+              <span class="text-[0.6875rem] text-faint">Message #general-chat</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+})
+export class MockWebComponent {
+  /** Three lines fill the shorter window without crowding it. */
+  protected readonly cast = CAST.slice(0, 3);
+
+  protected readonly guilds = [
+    { id: 'R', tint: 'bg-brand-dark', active: true },
+    { id: 'K', tint: 'bg-emerald-800', active: false },
+    { id: 'N', tint: 'bg-orange-900', active: false },
+  ];
+
+  protected readonly channels = [
+    { name: 'welcome', active: false, voice: false },
+    { name: 'general-chat', active: true, voice: false },
+    { name: 'raid-planning', active: false, voice: false },
+    { name: 'clips', active: false, voice: false },
+    { name: 'Squad one', active: false, voice: true },
+  ];
+}
+
 @Component({
   selector: 'app-mock-wiki',
   changeDetection: ChangeDetectionStrategy.OnPush,
